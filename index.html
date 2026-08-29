@@ -6,462 +6,575 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
     <title>FPSCalculator - Calculadora de FPS para PC</title>
-    <meta name="description" content="Calcula los FPS aproximados de tu PC en Fortnite, GTA V, Minecraft, Warzone y muchos más juegos. Selecciona tu procesador, tarjeta gráfica, resolución y calidad.">
+
+    <meta
+        name="description"
+        content="Calcula los FPS aproximados de tu PC en Fortnite, GTA V, Minecraft, Warzone y muchos más juegos. Selecciona tu procesador, tarjeta gráfica, resolución y calidad."
+    >
+
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://diegerig.github.io/FPSCalculator/">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="FPSCalculator - Calculadora de FPS para PC">
-    <meta property="og:description" content="Calcula los FPS aproximados de tu PC según tu procesador, tarjeta gráfica, juego y resolución.">
-    <meta property="og:url" content="https://diegerig.github.io/FPSCalculator/">
+    <link
+        rel="canonical"
+        href="https://diegerig.github.io/FPSCalculator/"
+    >
+
+    <meta
+        property="og:title"
+        content="FPSCalculator - Calculadora de FPS para PC"
+    >
+
+    <meta
+        property="og:description"
+        content="Calcula los FPS aproximados de tu PC según tu procesador, tarjeta gráfica, juego, resolución y calidad."
+    >
+
+    <meta
+        property="og:url"
+        content="https://diegerig.github.io/FPSCalculator/"
+    >
+
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="FPSCalculator">
 
-    <!-- CSS -->
+    <meta
+        property="og:site_name"
+        content="FPSCalculator"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- CABECERA -->
-    <header class="header">
-        <div class="container">
+<header class="topbar">
 
-            <div class="logo">
-                <span class="logo-icon">⚡</span>
-                <span>FPSCalculator</span>
+    <div class="container nav-container">
+
+        <a href="#" class="brand">
+            <span class="brand-icon">⚡</span>
+            <span>FPS<span>Calculator</span></span>
+        </a>
+
+        <nav>
+            <a href="#calculator">Calculadora</a>
+            <a href="#games">Juegos</a>
+            <a href="#comparison">Comparador</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🎮 PC PERFORMANCE TOOL
             </div>
 
-            <nav class="nav">
-                <a href="#calculator">Calculadora</a>
-                <a href="#games">Juegos</a>
-                <a href="#comparison">Comparador</a>
-            </nav>
+            <h1>
+                Descubre cuántos
+                <span>FPS</span>
+                tendrás
+            </h1>
 
-        </div>
-    </header>
+            <p>
+                Comprueba el rendimiento estimado de tu PC
+                en tus juegos favoritos seleccionando tu
+                CPU, GPU, resolución y calidad gráfica.
+            </p>
 
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="container">
-
-            <div class="hero-content">
-
-                <span class="hero-badge">
-                    🎮 FPS CALCULATOR
-                </span>
-
-                <h1>
-                    ¿Cuántos FPS tendrá tu PC?
-                </h1>
-
-                <p>
-                    Descubre cuántos FPS puedes conseguir en tus juegos
-                    según tu procesador y tarjeta gráfica.
-                </p>
-
-                <a href="#calculator" class="hero-button">
-                    Calcular mis FPS
-                </a>
-
-            </div>
-
-
-            <div class="hero-stats">
-
-                <div class="stat-card">
-                    <strong id="gameCount">0</strong>
-                    <span>Juegos</span>
-                </div>
-
-                <div class="stat-card">
-                    <strong id="cpuCount">0</strong>
-                    <span>Procesadores</span>
-                </div>
-
-                <div class="stat-card">
-                    <strong id="gpuCount">0</strong>
-                    <span>Gráficas</span>
-                </div>
-
-            </div>
+            <a
+                href="#calculator"
+                class="primary-button"
+            >
+                🚀 Calcular FPS
+            </a>
 
         </div>
 
-    </section>
+
+        <div class="hero-card">
+
+            <div class="hero-card-top">
+                <span>FPS ESTIMADOS</span>
+                <span class="live-dot">●</span>
+            </div>
+
+            <strong>144</strong>
+
+            <span>FPS</span>
+
+            <div class="fake-bar">
+                <div></div>
+            </div>
+
+            <small>
+                Rendimiento estimado
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- CALCULADORA -->
-    <section id="calculator" class="calculator-section">
 
-        <div class="container">
+<section class="stats">
 
-            <div class="section-title">
+    <div class="container stats-grid">
 
-                <span>⚙️ CONFIGURACIÓN</span>
+        <div class="stat">
+            <strong id="gameCount">0</strong>
+            <span>Juegos</span>
+        </div>
 
-                <h2>
-                    Calcula tus FPS
-                </h2>
+        <div class="stat">
+            <strong id="cpuCount">0</strong>
+            <span>Procesadores</span>
+        </div>
 
-                <p>
-                    Selecciona tu hardware y configura el juego.
-                </p>
+        <div class="stat">
+            <strong id="gpuCount">0</strong>
+            <span>Tarjetas gráficas</span>
+        </div>
+
+        <div class="stat">
+            <strong>4K</strong>
+            <span>Resolución máxima</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="calculator"
+    class="section calculator-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>CALCULADORA</span>
+
+            <h2>
+                Calcula el rendimiento de tu PC
+            </h2>
+
+            <p>
+                Introduce los componentes de tu ordenador
+                y configura el juego.
+            </p>
+
+        </div>
+
+
+        <div class="calculator-box">
+
+
+            <div class="field">
+
+                <label for="game">
+                    🎮 Juego
+                </label>
+
+                <select id="game">
+                    <option>
+                        Cargando juegos...
+                    </option>
+                </select>
 
             </div>
 
 
-            <div class="calculator-grid">
+            <div class="field">
 
-                <div class="input-card">
+                <label for="cpu">
+                    🧠 Procesador
+                </label>
 
-                    <label for="game">
-                        🎮 Juego
-                    </label>
-
-                    <select id="game">
-                        <option>Cargando juegos...</option>
-                    </select>
-
-                </div>
-
-
-                <div class="input-card">
-
-                    <label for="cpu">
-                        🧠 Procesador
-                    </label>
-
-                    <select id="cpu">
-                        <option>Cargando procesadores...</option>
-                    </select>
-
-                </div>
-
-
-                <div class="input-card">
-
-                    <label for="gpu">
-                        🎨 Tarjeta gráfica
-                    </label>
-
-                    <select id="gpu">
-                        <option>Cargando gráficas...</option>
-                    </select>
-
-                </div>
-
-
-                <div class="input-card">
-
-                    <label for="resolution">
-                        🖥️ Resolución
-                    </label>
-
-                    <select id="resolution">
-
-                        <option value="720p">
-                            1280 × 720 — 720p
-                        </option>
-
-                        <option value="1080p" selected>
-                            1920 × 1080 — 1080p
-                        </option>
-
-                        <option value="1440p">
-                            2560 × 1440 — 1440p
-                        </option>
-
-                        <option value="2160p">
-                            3840 × 2160 — 4K
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="input-card">
-
-                    <label for="quality">
-                        ⚙️ Calidad
-                    </label>
-
-                    <select id="quality">
-
-                        <option value="low">
-                            Baja
-                        </option>
-
-                        <option value="medium">
-                            Media
-                        </option>
-
-                        <option value="high" selected>
-                            Alta
-                        </option>
-
-                        <option value="ultra">
-                            Ultra
-                        </option>
-
-                    </select>
-
-                </div>
+                <select id="cpu">
+                    <option>
+                        Cargando procesadores...
+                    </option>
+                </select>
 
             </div>
 
 
-            <button id="calculateButton" class="calculate-button">
-                🚀 CALCULAR FPS
+            <div class="field">
+
+                <label for="gpu">
+                    🎨 Tarjeta gráfica
+                </label>
+
+                <select id="gpu">
+                    <option>
+                        Cargando gráficas...
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="resolution">
+                    🖥️ Resolución
+                </label>
+
+                <select id="resolution">
+
+                    <option value="720p">
+                        720p
+                    </option>
+
+                    <option
+                        value="1080p"
+                        selected
+                    >
+                        1080p
+                    </option>
+
+                    <option value="1440p">
+                        1440p
+                    </option>
+
+                    <option value="2160p">
+                        4K
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="quality">
+                    ⚙️ Calidad
+                </label>
+
+                <select id="quality">
+
+                    <option value="low">
+                        Baja
+                    </option>
+
+                    <option value="medium">
+                        Media
+                    </option>
+
+                    <option
+                        value="high"
+                        selected
+                    >
+                        Alta
+                    </option>
+
+                    <option value="ultra">
+                        Ultra
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="calculateButton"
+                class="calculate-button"
+            >
+                CALCULAR FPS
             </button>
 
+        </div>
 
-            <!-- RESULTADO -->
-            <div class="result-card">
 
-                <div class="result-main">
 
-                    <span class="result-label">
-                        FPS ESTIMADOS
-                    </span>
+        <div class="result-box">
 
-                    <strong id="fpsNumber">
-                        -- FPS
-                    </strong>
+            <div class="result-highlight">
 
-                    <span id="performanceBadge" class="performance-badge">
-                        --
-                    </span>
+                <span>
+                    FPS ESTIMADOS
+                </span>
 
+                <strong id="fpsNumber">
+                    -- FPS
+                </strong>
+
+                <b id="performanceBadge">
+                    --
+                </b>
+
+            </div>
+
+
+            <div class="result-stats">
+
+                <div>
+                    <span>FPS promedio</span>
+                    <strong id="averageFPS">--</strong>
                 </div>
 
-
-                <div class="result-info">
-
-                    <div>
-                        <span>FPS promedio</span>
-                        <strong id="averageFPS">--</strong>
-                    </div>
-
-                    <div>
-                        <span>1% Low</span>
-                        <strong id="onePercent">--</strong>
-                    </div>
-
-                    <div>
-                        <span>Uso CPU</span>
-                        <strong id="cpuUsage">--</strong>
-                    </div>
-
-                    <div>
-                        <span>Uso GPU</span>
-                        <strong id="gpuUsage">--</strong>
-                    </div>
-
-                    <div>
-                        <span>Cuello de botella</span>
-                        <strong id="bottleneckText">--</strong>
-                    </div>
-
+                <div>
+                    <span>1% Low</span>
+                    <strong id="onePercent">--</strong>
                 </div>
 
+                <div>
+                    <span>CPU</span>
+                    <strong id="cpuUsage">--</strong>
+                </div>
 
-                <p id="resultDescription" class="result-description">
-                    Selecciona tu configuración y pulsa calcular.
-                </p>
+                <div>
+                    <span>GPU</span>
+                    <strong id="gpuUsage">--</strong>
+                </div>
+
+                <div>
+                    <span>Cuello de botella</span>
+                    <strong id="bottleneckText">--</strong>
+                </div>
+
+            </div>
+
+
+            <p id="resultDescription">
+                Selecciona tu configuración y calcula
+                el rendimiento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="games"
+    class="section games-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>JUEGOS</span>
+
+            <h2>
+                Elige tu juego
+            </h2>
+
+            <p>
+                Busca y selecciona uno de los juegos
+                disponibles.
+            </p>
+
+        </div>
+
+
+        <div class="search-container">
+
+            <input
+                id="gameSearch"
+                type="search"
+                placeholder="🔎 Buscar juego..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div
+            id="gamesGrid"
+            class="games-grid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="comparison"
+    class="section comparison-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>COMPARADOR</span>
+
+            <h2>
+                Compara dos tarjetas gráficas
+            </h2>
+
+            <p>
+                Descubre cuál ofrece mayor rendimiento
+                estimado.
+            </p>
+
+        </div>
+
+
+        <div class="comparison-box">
+
+            <div class="field">
+
+                <label for="compareGpu1">
+                    GPU 1
+                </label>
+
+                <select id="compareGpu1"></select>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="field">
+
+                <label for="compareGpu2">
+                    GPU 2
+                </label>
+
+                <select id="compareGpu2"></select>
 
             </div>
 
         </div>
 
-    </section>
+
+        <div
+            id="compareResult"
+            class="compare-result"
+        >
+            Selecciona dos gráficas para compararlas.
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- JUEGOS -->
-    <section id="games" class="games-section">
 
-        <div class="container">
+<section class="section information">
 
-            <div class="section-title">
+    <div class="container">
 
-                <span>🎮 JUEGOS</span>
+        <div class="section-heading">
 
-                <h2>
-                    Selecciona un juego
-                </h2>
+            <span>FPSCALCULATOR</span>
+
+            <h2>
+                Calcula tus FPS fácilmente
+            </h2>
+
+            <p>
+                Una herramienta sencilla para conocer
+                el rendimiento aproximado de tu PC.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <article class="info-card">
+
+                <div class="info-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Elige un juego
+                </h3>
 
                 <p>
-                    Busca entre todos los juegos disponibles.
+                    Busca tu juego favorito y selecciónalo
+                    para realizar el cálculo.
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="search-box">
+            <article class="info-card">
 
-                <input
-                    type="text"
-                    id="gameSearch"
-                    placeholder="🔎 Buscar juego..."
-                    autocomplete="off"
-                >
+                <div class="info-icon">
+                    🧠
+                </div>
 
-            </div>
-
-
-            <div id="gamesGrid" class="games-grid"></div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMPARADOR -->
-    <section id="comparison" class="comparison-section">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>🆚 COMPARADOR</span>
-
-                <h2>
-                    Compara dos gráficas
-                </h2>
+                <h3>
+                    Selecciona tu hardware
+                </h3>
 
                 <p>
-                    Comprueba cuál tiene mayor rendimiento estimado.
+                    Elige el procesador y la tarjeta gráfica
+                    de tu ordenador.
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="comparison-grid">
+            <article class="info-card">
 
-                <div class="input-card">
-
-                    <label for="compareGpu1">
-                        🎨 GPU 1
-                    </label>
-
-                    <select id="compareGpu1"></select>
-
+                <div class="info-icon">
+                    📊
                 </div>
 
+                <h3>
+                    Obtén una estimación
+                </h3>
 
-                <div class="versus">
-                    VS
-                </div>
+                <p>
+                    Consulta los FPS aproximados y otros
+                    datos de rendimiento.
+                </p>
 
+            </article>
 
-                <div class="input-card">
-
-                    <label for="compareGpu2">
-                        🎨 GPU 2
-                    </label>
-
-                    <select id="compareGpu2"></select>
-
-                </div>
-
-            </div>
-
-
-            <div id="compareResult" class="compare-result">
-                Selecciona dos gráficas.
-            </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+</main>
 
 
-    <!-- INFORMACIÓN -->
-    <section class="info-section">
 
-        <div class="container">
+<footer>
 
-            <div class="section-title">
+    <div class="container footer-container">
 
-                <span>ℹ️ FPSCALCULATOR</span>
+        <div>
 
-                <h2>
-                    ¿Cómo funciona?
-                </h2>
-
-            </div>
-
-
-            <div class="info-grid">
-
-                <article class="info-card">
-
-                    <div class="info-icon">
-                        🎮
-                    </div>
-
-                    <h3>
-                        Elige tu juego
-                    </h3>
-
-                    <p>
-                        Selecciona el juego que quieres comprobar.
-                    </p>
-
-                </article>
-
-
-                <article class="info-card">
-
-                    <div class="info-icon">
-                        🖥️
-                    </div>
-
-                    <h3>
-                        Introduce tu PC
-                    </h3>
-
-                    <p>
-                        Selecciona tu procesador y tarjeta gráfica.
-                    </p>
-
-                </article>
-
-
-                <article class="info-card">
-
-                    <div class="info-icon">
-                        📊
-                    </div>
-
-                    <h3>
-                        Comprueba los FPS
-                    </h3>
-
-                    <p>
-                        Obtén una estimación del rendimiento de tu PC.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-logo">
+            <div class="footer-brand">
                 ⚡ FPSCalculator
             </div>
 
@@ -469,22 +582,43 @@
                 Calculadora de FPS para PC.
             </p>
 
-            <p class="footer-small">
-                Las cifras de FPS son estimaciones y pueden variar
-                dependiendo del hardware y la configuración.
-            </p>
+        </div>
 
-            <div class="footer-copy">
-                © 2026 FPSCalculator
-            </div>
+
+        <div class="footer-links">
+
+            <a href="#calculator">
+                Calculadora
+            </a>
+
+            <a href="#games">
+                Juegos
+            </a>
+
+            <a href="#comparison">
+                Comparador
+            </a>
 
         </div>
 
-    </footer>
+
+        <div class="copyright">
+
+            © 2026 FPSCalculator
+
+            <small>
+                Los FPS mostrados son estimaciones.
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 
 </body>
 
