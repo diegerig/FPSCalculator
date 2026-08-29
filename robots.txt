@@ -1,0 +1,1 @@
+User-agent: * Allow: / Sitemap: https://diegerig.github.io/FPSCalculator/sitemap.xml
