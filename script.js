@@ -1,182 +1,377 @@
+// ============================================================
+// FPSCALCULATOR - SCRIPT PRINCIPAL
+// ============================================================
+
+// =========================
+// JUEGOS
+// =========================
+
 const games = [
     {
         name: "Fortnite",
         genre: "Battle Royale",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/header.jpg",
+        performance: 1.30
     },
     {
         name: "Grand Theft Auto V",
-        genre: "Acción / Mundo abierto",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+        genre: "Mundo abierto",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+        performance: 1.10
+    },
+    {
+        name: "Grand Theft Auto V Enhanced",
+        genre: "Mundo abierto",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg",
+        performance: 0.80
     },
     {
         name: "Red Dead Redemption 2",
-        genre: "Acción / Mundo abierto",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg"
+        genre: "Mundo abierto",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+        performance: 0.70
     },
     {
         name: "Cyberpunk 2077",
         genre: "RPG",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+        performance: 0.65
     },
     {
         name: "Minecraft",
-        genre: "Supervivencia / Construcción",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
+        genre: "Supervivencia",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
+        performance: 1.40
     },
     {
         name: "Counter-Strike 2",
         genre: "FPS",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
+        performance: 1.45
     },
     {
         name: "VALORANT",
         genre: "FPS",
-        image: "https://placehold.co/600x338/101218/ff3030?text=VALORANT"
+        image: "https://placehold.co/600x338/111111/ff3030?text=VALORANT",
+        performance: 1.60
     },
     {
         name: "Apex Legends",
         genre: "Battle Royale",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg",
+        performance: 1.05
     },
     {
         name: "Call of Duty Warzone",
         genre: "FPS / Battle Royale",
-        image: "https://placehold.co/600x338/101218/ff3030?text=CALL+OF+DUTY+WARZONE"
+        image: "https://placehold.co/600x338/111111/ff3030?text=WARZONE",
+        performance: 0.82
     },
     {
         name: "Rocket League",
         genre: "Deportes",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/252950/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/252950/header.jpg",
+        performance: 1.60
     },
     {
         name: "EA Sports FC 25",
         genre: "Fútbol",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2669320/header.jpg",
+        performance: 1.30
+    },
+    {
+        name: "EA Sports FC 26",
+        genre: "Fútbol",
+        image: "https://placehold.co/600x338/111111/ff3030?text=EA+FC+26",
+        performance: 1.20
     },
     {
         name: "Forza Horizon 5",
         genre: "Carreras",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg",
+        performance: 0.85
     },
     {
         name: "Forza Motorsport",
         genre: "Carreras",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2440510/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2440510/header.jpg",
+        performance: 0.75
     },
     {
         name: "BeamNG.drive",
         genre: "Simulación",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg",
+        performance: 0.70
     },
     {
         name: "Rust",
         genre: "Supervivencia",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg",
+        performance: 0.75
     },
     {
         name: "The Forest",
-        genre: "Terror / Supervivencia",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg"
+        genre: "Terror",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg",
+        performance: 0.90
     },
     {
         name: "Sons of the Forest",
-        genre: "Terror / Supervivencia",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg"
+        genre: "Terror",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
+        performance: 0.65
     },
     {
         name: "Phasmophobia",
         genre: "Terror",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/header.jpg",
+        performance: 1.10
     },
     {
         name: "Dead by Daylight",
         genre: "Terror",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/381210/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/381210/header.jpg",
+        performance: 1.00
     },
     {
         name: "PUBG",
         genre: "Battle Royale",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg",
+        performance: 0.95
     },
     {
         name: "Overwatch 2",
         genre: "FPS",
-        image: "https://placehold.co/600x338/101218/ff3030?text=OVERWATCH+2"
+        image: "https://placehold.co/600x338/111111/ff3030?text=OVERWATCH+2",
+        performance: 1.30
     },
     {
         name: "Rainbow Six Siege",
         genre: "FPS",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/359550/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/359550/header.jpg",
+        performance: 1.35
     },
     {
         name: "The Witcher 3",
         genre: "RPG",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+        performance: 0.85
     },
     {
         name: "Hogwarts Legacy",
         genre: "RPG",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
+        performance: 0.65
     },
     {
         name: "Elden Ring",
-        genre: "RPG / Acción",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg"
+        genre: "RPG",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+        performance: 0.75
     },
     {
         name: "Starfield",
-        genre: "RPG / Ciencia ficción",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/header.jpg"
+        genre: "RPG",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/header.jpg",
+        performance: 0.55
     },
     {
         name: "Battlefield 2042",
         genre: "FPS",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1517290/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1517290/header.jpg",
+        performance: 0.75
     },
     {
         name: "The Finals",
         genre: "FPS",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2073850/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2073850/header.jpg",
+        performance: 0.85
     },
     {
         name: "Destiny 2",
         genre: "FPS",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg",
+        performance: 1.00
     },
     {
         name: "Dying Light 2",
+        genre: "Acción / Terror",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/534380/header.jpg",
+        performance: 0.65
+    },
+    {
+        name: "Assassin's Creed Valhalla",
+        genre: "Acción",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/header.jpg",
+        performance: 0.70
+    },
+    {
+        name: "Assassin's Creed Mirage",
+        genre: "Acción",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/3035570/header.jpg",
+        performance: 0.75
+    },
+    {
+        name: "Far Cry 6",
+        genre: "FPS / Acción",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2369390/header.jpg",
+        performance: 0.75
+    },
+    {
+        name: "Horizon Zero Dawn",
+        genre: "Acción / RPG",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1151640/header.jpg",
+        performance: 0.80
+    },
+    {
+        name: "Horizon Forbidden West",
+        genre: "Acción / RPG",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2420110/header.jpg",
+        performance: 0.65
+    },
+    {
+        name: "God of War",
+        genre: "Acción",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
+        performance: 0.75
+    },
+    {
+        name: "God of War Ragnarök",
+        genre: "Acción",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/header.jpg",
+        performance: 0.65
+    },
+    {
+        name: "Marvel Rivals",
+        genre: "FPS / Acción",
+        image: "https://placehold.co/600x338/111111/ff3030?text=MARVEL+RIVALS",
+        performance: 0.75
+    },
+    {
+        name: "Palworld",
+        genre: "Supervivencia",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/header.jpg",
+        performance: 0.70
+    },
+    {
+        name: "ARK: Survival Ascended",
+        genre: "Supervivencia",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2399830/header.jpg",
+        performance: 0.45
+    },
+    {
+        name: "Euro Truck Simulator 2",
+        genre: "Simulación",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/227300/header.jpg",
+        performance: 1.25
+    },
+    {
+        name: "American Truck Simulator",
+        genre: "Simulación",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/270880/header.jpg",
+        performance: 1.20
+    },
+    {
+        name: "Garry's Mod",
+        genre: "Sandbox",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/4000/header.jpg",
+        performance: 1.35
+    },
+    {
+        name: "Terraria",
+        genre: "Sandbox",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg",
+        performance: 1.80
+    },
+    {
+        name: "Lethal Company",
+        genre: "Terror",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/header.jpg",
+        performance: 1.20
+    },
+    {
+        name: "Left 4 Dead 2",
+        genre: "FPS / Terror",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/550/header.jpg",
+        performance: 1.70
+    },
+    {
+        name: "Grand Theft Auto IV",
+        genre: "Mundo abierto",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/12210/header.jpg",
+        performance: 0.90
+    },
+    {
+        name: "Fallout 4",
+        genre: "RPG",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/377160/header.jpg",
+        performance: 0.90
+    },
+    {
+        name: "Resident Evil 4",
         genre: "Terror / Acción",
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/534380/header.jpg"
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
+        performance: 0.75
     }
 ];
 
 
+// =========================
+// PROCESADORES
+// =========================
+
 const cpus = [
+
+    // INTEL CORE i3
     "Intel Core i3-8100",
     "Intel Core i3-9100F",
+    "Intel Core i3-10100",
     "Intel Core i3-10100F",
+    "Intel Core i3-12100",
     "Intel Core i3-12100F",
+    "Intel Core i3-13100",
     "Intel Core i3-13100F",
+    "Intel Core i3-14100",
     "Intel Core i3-14100F",
 
+    // INTEL CORE i5
     "Intel Core i5-8400",
+    "Intel Core i5-8500",
+    "Intel Core i5-8600K",
     "Intel Core i5-9400F",
+    "Intel Core i5-9600K",
+    "Intel Core i5-10400",
     "Intel Core i5-10400F",
+    "Intel Core i5-10600K",
+    "Intel Core i5-11400",
     "Intel Core i5-11400F",
+    "Intel Core i5-11600K",
+    "Intel Core i5-12400",
     "Intel Core i5-12400F",
+    "Intel Core i5-12600K",
+    "Intel Core i5-13400",
     "Intel Core i5-13400F",
+    "Intel Core i5-13600K",
+    "Intel Core i5-14400",
     "Intel Core i5-14400F",
     "Intel Core i5-14600K",
 
+    // INTEL CORE i7
+    "Intel Core i7-8700",
     "Intel Core i7-8700K",
     "Intel Core i7-9700K",
+    "Intel Core i7-10700",
     "Intel Core i7-10700K",
+    "Intel Core i7-11700",
     "Intel Core i7-11700K",
+    "Intel Core i7-12700",
     "Intel Core i7-12700K",
+    "Intel Core i7-13700",
     "Intel Core i7-13700K",
+    "Intel Core i7-14700",
     "Intel Core i7-14700K",
 
+    // INTEL CORE i9
     "Intel Core i9-9900K",
     "Intel Core i9-10900K",
     "Intel Core i9-11900K",
@@ -184,26 +379,43 @@ const cpus = [
     "Intel Core i9-13900K",
     "Intel Core i9-14900K",
 
+    // AMD RYZEN 3
+    "AMD Ryzen 3 1200",
     "AMD Ryzen 3 2200G",
     "AMD Ryzen 3 3100",
+    "AMD Ryzen 3 3300X",
     "AMD Ryzen 3 4100",
+    "AMD Ryzen 3 4300G",
     "AMD Ryzen 3 5300G",
 
+    // AMD RYZEN 5
     "AMD Ryzen 5 1600",
+    "AMD Ryzen 5 1600 AF",
     "AMD Ryzen 5 2600",
+    "AMD Ryzen 5 2600X",
     "AMD Ryzen 5 3600",
+    "AMD Ryzen 5 3600X",
     "AMD Ryzen 5 4500",
+    "AMD Ryzen 5 4600G",
     "AMD Ryzen 5 5500",
+    "AMD Ryzen 5 5500GT",
     "AMD Ryzen 5 5600",
     "AMD Ryzen 5 5600G",
+    "AMD Ryzen 5 5600X",
     "AMD Ryzen 5 5700G",
     "AMD Ryzen 5 7600",
     "AMD Ryzen 5 7600X",
+    "AMD Ryzen 5 8400F",
+    "AMD Ryzen 5 8500G",
     "AMD Ryzen 5 8600G",
     "AMD Ryzen 5 9600X",
 
+    // AMD RYZEN 7
+    "AMD Ryzen 7 1700",
+    "AMD Ryzen 7 2700",
     "AMD Ryzen 7 2700X",
     "AMD Ryzen 7 3700X",
+    "AMD Ryzen 7 3800X",
     "AMD Ryzen 7 5700X",
     "AMD Ryzen 7 5700G",
     "AMD Ryzen 7 5800X",
@@ -215,9 +427,12 @@ const cpus = [
     "AMD Ryzen 7 9700X",
     "AMD Ryzen 7 9800X3D",
 
+    // AMD RYZEN 9
     "AMD Ryzen 9 3900X",
+    "AMD Ryzen 9 3950X",
     "AMD Ryzen 9 5900X",
     "AMD Ryzen 9 5950X",
+    "AMD Ryzen 9 7900",
     "AMD Ryzen 9 7900X",
     "AMD Ryzen 9 7950X",
     "AMD Ryzen 9 7950X3D",
@@ -227,14 +442,28 @@ const cpus = [
 ];
 
 
+// =========================
+// TARJETAS GRÁFICAS
+// =========================
+
 const gpus = [
+
+    // NVIDIA GTX 700
+    "NVIDIA GTX 750",
     "NVIDIA GTX 750 Ti",
+    "NVIDIA GTX 760",
+    "NVIDIA GTX 770",
+    "NVIDIA GTX 780",
+    "NVIDIA GTX 780 Ti",
+
+    // NVIDIA GTX 900
     "NVIDIA GTX 950",
     "NVIDIA GTX 960",
     "NVIDIA GTX 970",
     "NVIDIA GTX 980",
     "NVIDIA GTX 980 Ti",
 
+    // NVIDIA GTX 1000
     "NVIDIA GTX 1050",
     "NVIDIA GTX 1050 Ti",
     "NVIDIA GTX 1060 3GB",
@@ -244,12 +473,15 @@ const gpus = [
     "NVIDIA GTX 1080",
     "NVIDIA GTX 1080 Ti",
 
+    // NVIDIA GTX 1600
+    "NVIDIA GTX 1630",
     "NVIDIA GTX 1650",
     "NVIDIA GTX 1650 Super",
     "NVIDIA GTX 1660",
     "NVIDIA GTX 1660 Super",
     "NVIDIA GTX 1660 Ti",
 
+    // NVIDIA RTX 2000
     "NVIDIA RTX 2060",
     "NVIDIA RTX 2060 Super",
     "NVIDIA RTX 2070",
@@ -258,6 +490,7 @@ const gpus = [
     "NVIDIA RTX 2080 Super",
     "NVIDIA RTX 2080 Ti",
 
+    // NVIDIA RTX 3000
     "NVIDIA RTX 3050",
     "NVIDIA RTX 3060",
     "NVIDIA RTX 3060 Ti",
@@ -268,6 +501,7 @@ const gpus = [
     "NVIDIA RTX 3090",
     "NVIDIA RTX 3090 Ti",
 
+    // NVIDIA RTX 4000
     "NVIDIA RTX 4060",
     "NVIDIA RTX 4060 Ti",
     "NVIDIA RTX 4070",
@@ -278,6 +512,7 @@ const gpus = [
     "NVIDIA RTX 4080 Super",
     "NVIDIA RTX 4090",
 
+    // NVIDIA RTX 5000
     "NVIDIA RTX 5060",
     "NVIDIA RTX 5060 Ti",
     "NVIDIA RTX 5070",
@@ -285,17 +520,33 @@ const gpus = [
     "NVIDIA RTX 5080",
     "NVIDIA RTX 5090",
 
+    // AMD RX 400
+    "AMD RX 460",
+    "AMD RX 470",
+    "AMD RX 480",
+
+    // AMD RX 500
     "AMD RX 550",
     "AMD RX 560",
     "AMD RX 570",
     "AMD RX 580",
     "AMD RX 590",
 
+    // AMD VEGA
+    "AMD Vega 3",
+    "AMD Vega 6",
+    "AMD Vega 7",
+    "AMD Vega 8",
+    "AMD Vega 10",
+    "AMD Vega 11",
+
+    // AMD RX 5000
     "AMD RX 5500 XT",
     "AMD RX 5600 XT",
     "AMD RX 5700",
     "AMD RX 5700 XT",
 
+    // AMD RX 6000
     "AMD RX 6400",
     "AMD RX 6500 XT",
     "AMD RX 6600",
@@ -309,6 +560,7 @@ const gpus = [
     "AMD RX 6900 XT",
     "AMD RX 6950 XT",
 
+    // AMD RX 7000
     "AMD RX 7600",
     "AMD RX 7600 XT",
     "AMD RX 7700 XT",
@@ -317,23 +569,31 @@ const gpus = [
     "AMD RX 7900 XT",
     "AMD RX 7900 XTX",
 
+    // AMD RX 9000
     "AMD RX 9060 XT",
     "AMD RX 9070",
     "AMD RX 9070 XT",
 
-    "AMD Vega 3",
-    "AMD Vega 6",
-    "AMD Vega 7",
-    "AMD Vega 8",
-    "AMD Vega 10",
-    "AMD Vega 11",
-
+    // INTEL
+    "Intel UHD 610",
+    "Intel UHD 620",
     "Intel UHD 630",
     "Intel UHD 730",
+    "Intel UHD 750",
     "Intel UHD 770",
-    "Intel Iris Xe"
+    "Intel Iris Xe",
+    "Intel Arc A310",
+    "Intel Arc A380",
+    "Intel Arc A580",
+    "Intel Arc A750",
+    "Intel Arc A770",
+    "Intel Arc B580"
 ];
 
+
+// ============================================================
+// ELEMENTOS DE LA PÁGINA
+// ============================================================
 
 const gameSelect = document.getElementById("game");
 const cpuSelect = document.getElementById("cpu");
@@ -342,8 +602,13 @@ const gpuSelect = document.getElementById("gpu");
 const gamesGrid = document.getElementById("gamesGrid");
 const gameSearch = document.getElementById("gameSearch");
 
-const calculateButton = document.getElementById("calculateButton");
+const calculateButton =
+    document.getElementById("calculateButton");
 
+
+// ============================================================
+// AÑADIR OPCIONES A SELECT
+// ============================================================
 
 function addOptions(select, items) {
 
@@ -365,6 +630,10 @@ function addOptions(select, items) {
     });
 }
 
+
+// ============================================================
+// CARGAR JUEGOS
+// ============================================================
 
 function loadGames() {
 
@@ -388,7 +657,7 @@ function loadGames() {
                 src="${game.image}"
                 alt="${game.name}"
                 loading="lazy"
-                onerror="this.src='https://placehold.co/600x338/101218/ff3030?text=FPSCalculator'"
+                onerror="this.src='https://placehold.co/600x338/111111/ff3030?text=FPSCalculator'"
             >
 
             <div class="game-info">
@@ -410,55 +679,83 @@ function loadGames() {
 }
 
 
+// ============================================================
+// SELECCIONAR JUEGO
+// ============================================================
+
 function selectGame(gameName) {
 
-    if (!gameSelect) {
-        return;
+    if (gameSelect) {
+        gameSelect.value = gameName;
     }
 
-    gameSelect.value = gameName;
+    document.querySelectorAll(".game-card").forEach(
+        function(card) {
 
-    document.querySelectorAll(".game-card").forEach(function(card) {
+            card.classList.remove("selected");
 
-        card.classList.remove("selected");
+            if (card.dataset.game === gameName) {
 
-        if (card.dataset.game === gameName) {
-            card.classList.add("selected");
+                card.classList.add("selected");
+
+            }
+
         }
-
-    });
-
-    document.getElementById("calculator").scrollIntoView({
-        behavior: "smooth"
-    });
+    );
 
 }
 
+
+// ============================================================
+// BUSCADOR
+// ============================================================
 
 function filterGames() {
 
-    const search = gameSearch.value.toLowerCase().trim();
+    if (!gameSearch) {
+        return;
+    }
 
-    document.querySelectorAll(".game-card").forEach(function(card) {
+    const search =
+        gameSearch.value.toLowerCase().trim();
 
-        const name = card.dataset.game.toLowerCase();
+    document.querySelectorAll(".game-card").forEach(
+        function(card) {
 
-        if (name.includes(search)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
+            const name =
+                card.dataset.game.toLowerCase();
+
+            if (name.includes(search)) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
         }
-
-    });
+    );
 
 }
 
+
+// ============================================================
+// POTENCIA GPU
+// ============================================================
 
 function getGpuPower(gpu) {
 
     const power = {
 
+        "NVIDIA GTX 750": 12,
         "NVIDIA GTX 750 Ti": 15,
+        "NVIDIA GTX 760": 20,
+        "NVIDIA GTX 770": 25,
+        "NVIDIA GTX 780": 30,
+        "NVIDIA GTX 780 Ti": 33,
+
         "NVIDIA GTX 950": 20,
         "NVIDIA GTX 960": 25,
         "NVIDIA GTX 970": 35,
@@ -474,6 +771,7 @@ function getGpuPower(gpu) {
         "NVIDIA GTX 1080": 65,
         "NVIDIA GTX 1080 Ti": 75,
 
+        "NVIDIA GTX 1630": 30,
         "NVIDIA GTX 1650": 40,
         "NVIDIA GTX 1650 Super": 45,
         "NVIDIA GTX 1660": 50,
@@ -514,6 +812,10 @@ function getGpuPower(gpu) {
         "NVIDIA RTX 5070 Ti": 145,
         "NVIDIA RTX 5080": 175,
         "NVIDIA RTX 5090": 230,
+
+        "AMD RX 460": 15,
+        "AMD RX 470": 25,
+        "AMD RX 480": 30,
 
         "AMD RX 550": 15,
         "AMD RX 560": 20,
@@ -558,10 +860,20 @@ function getGpuPower(gpu) {
         "AMD Vega 10": 20,
         "AMD Vega 11": 22,
 
+        "Intel UHD 610": 7,
+        "Intel UHD 620": 9,
         "Intel UHD 630": 10,
         "Intel UHD 730": 15,
+        "Intel UHD 750": 17,
         "Intel UHD 770": 20,
-        "Intel Iris Xe": 25
+        "Intel Iris Xe": 25,
+
+        "Intel Arc A310": 35,
+        "Intel Arc A380": 40,
+        "Intel Arc A580": 65,
+        "Intel Arc A750": 75,
+        "Intel Arc A770": 82,
+        "Intel Arc B580": 100
 
     };
 
@@ -569,6 +881,10 @@ function getGpuPower(gpu) {
 
 }
 
+
+// ============================================================
+// POTENCIA CPU
+// ============================================================
 
 function getCpuPower(cpu) {
 
@@ -606,6 +922,10 @@ function getCpuPower(cpu) {
         power = 95;
     }
 
+    if (cpu.includes("X3D")) {
+        power += 10;
+    }
+
     if (cpu.includes("G")) {
         power -= 5;
     }
@@ -615,68 +935,101 @@ function getCpuPower(cpu) {
 }
 
 
+// ============================================================
+// OBTENER JUEGO
+// ============================================================
+
+function getSelectedGame() {
+
+    const gameName =
+        gameSelect ? gameSelect.value : games[0].name;
+
+    return games.find(
+        function(game) {
+            return game.name === gameName;
+        }
+    ) || games[0];
+
+}
+
+
+// ============================================================
+// CALCULADORA FPS
+// ============================================================
+
 function calculateFPS() {
 
-    const game = gameSelect.value;
-    const cpu = cpuSelect.value;
-    const gpu = gpuSelect.value;
+    if (!gameSelect || !cpuSelect || !gpuSelect) {
+        return;
+    }
 
-    const resolution = document.getElementById("resolution").value;
-    const quality = document.getElementById("quality").value;
+    const game =
+        getSelectedGame();
 
-    let gpuPower = getGpuPower(gpu);
-    let cpuPower = getCpuPower(cpu);
+    const cpu =
+        cpuSelect.value;
 
-    let fps = gpuPower * 2.2;
+    const gpu =
+        gpuSelect.value;
 
-    const gameModifiers = {
+    const resolutionElement =
+        document.getElementById("resolution");
 
-        "Fortnite": 1.25,
-        "Grand Theft Auto V": 1.10,
-        "Red Dead Redemption 2": 0.70,
-        "Cyberpunk 2077": 0.65,
-        "Minecraft": 1.35,
-        "Counter-Strike 2": 1.40,
-        "VALORANT": 1.55,
-        "Apex Legends": 1.05,
-        "Call of Duty Warzone": 0.85,
-        "Rocket League": 1.55,
-        "EA Sports FC 25": 1.30,
-        "Forza Horizon 5": 0.85,
-        "Forza Motorsport": 0.75,
-        "BeamNG.drive": 0.70,
-        "Rust": 0.75,
-        "The Forest": 0.90,
-        "Sons of the Forest": 0.65,
-        "Phasmophobia": 1.10,
-        "Dead by Daylight": 1.00,
-        "PUBG": 0.95,
-        "Overwatch 2": 1.25,
-        "Rainbow Six Siege": 1.30,
-        "The Witcher 3": 0.85,
-        "Hogwarts Legacy": 0.65,
-        "Elden Ring": 0.75,
-        "Starfield": 0.55,
-        "Battlefield 2042": 0.75,
-        "The Finals": 0.85,
-        "Destiny 2": 1.00,
-        "Dying Light 2": 0.65
+    const qualityElement =
+        document.getElementById("quality");
 
-    };
+    const resolution =
+        resolutionElement
+            ? resolutionElement.value
+            : "1080p";
 
-    fps *= gameModifiers[game] || 1;
+    const quality =
+        qualityElement
+            ? qualityElement.value
+            : "high";
 
-    const cpuFactor = Math.min(cpuPower / 60, 1.25);
+    const gpuPower =
+        getGpuPower(gpu);
+
+    const cpuPower =
+        getCpuPower(cpu);
+
+    let fps =
+        gpuPower * 2.2;
+
+    fps *= game.performance;
+
+    const cpuFactor =
+        Math.min(
+            cpuPower / 60,
+            1.30
+        );
 
     fps *= cpuFactor;
 
-    if (resolution === "1440p") {
+
+    // =========================
+    // RESOLUCIÓN
+    // =========================
+
+    if (
+        resolution === "1440p" ||
+        resolution === "2K"
+    ) {
         fps *= 0.68;
     }
 
-    if (resolution === "4K") {
+    if (
+        resolution === "2160p" ||
+        resolution === "4K"
+    ) {
         fps *= 0.42;
     }
+
+
+    // =========================
+    // CALIDAD
+    // =========================
 
     if (quality === "low") {
         fps *= 1.45;
@@ -694,117 +1047,247 @@ function calculateFPS() {
         fps *= 0.78;
     }
 
-    fps = Math.max(5, Math.round(fps));
 
-    const onePercent = Math.max(
-        1,
-        Math.round(fps * 0.70)
-    );
+    // =========================
+    // FPS FINALES
+    // =========================
 
-    let cpuUsage = Math.round(
-        Math.min(
-            100,
-            45 + (gpuPower / Math.max(cpuPower, 1)) * 25
-        )
-    );
+    fps =
+        Math.max(
+            5,
+            Math.round(fps)
+        );
 
-    let gpuUsage = Math.round(
-        Math.min(
-            99,
-            70 + gpuPower / 5
-        )
-    );
+    const onePercent =
+        Math.max(
+            1,
+            Math.round(fps * 0.70)
+        );
 
-    let bottleneck = "GPU";
 
-    if (cpuPower < gpuPower * 0.65) {
+    // =========================
+    // USO CPU / GPU
+    // =========================
 
-        bottleneck = "CPU";
+    let cpuUsage =
+        Math.round(
+            Math.min(
+                100,
+                45 +
+                (gpuPower /
+                    Math.max(cpuPower, 1)) *
+                25
+            )
+        );
+
+    let gpuUsage =
+        Math.round(
+            Math.min(
+                99,
+                70 +
+                gpuPower / 5
+            )
+        );
+
+
+    // =========================
+    // CUELLO DE BOTELLA
+    // =========================
+
+    let bottleneck =
+        "GPU";
+
+    if (
+        cpuPower <
+        gpuPower * 0.65
+    ) {
+
+        bottleneck =
+            "CPU";
 
         cpuUsage = 95;
         gpuUsage = 75;
 
     }
 
-    let performance = "Bajo";
+
+    // =========================
+    // NIVEL DE RENDIMIENTO
+    // =========================
+
+    let performanceText =
+        "Bajo";
 
     if (fps >= 144) {
-        performance = "Excelente";
+
+        performanceText =
+            "Excelente";
+
     }
     else if (fps >= 100) {
-        performance = "Muy bueno";
+
+        performanceText =
+            "Muy bueno";
+
     }
     else if (fps >= 60) {
-        performance = "Bueno";
+
+        performanceText =
+            "Bueno";
+
     }
     else if (fps >= 30) {
-        performance = "Jugable";
+
+        performanceText =
+            "Jugable";
+
     }
 
-    document.getElementById("fpsNumber").textContent =
-        fps + " FPS";
 
-    document.getElementById("averageFPS").textContent =
-        fps + " FPS";
+    // =========================
+    // MOSTRAR RESULTADOS
+    // =========================
 
-    document.getElementById("onePercent").textContent =
-        onePercent + " FPS";
+    const fpsNumber =
+        document.getElementById("fpsNumber");
 
-    document.getElementById("cpuUsage").textContent =
-        cpuUsage + "%";
+    const averageFPS =
+        document.getElementById("averageFPS");
 
-    document.getElementById("gpuUsage").textContent =
-        gpuUsage + "%";
+    const onePercentElement =
+        document.getElementById("onePercent");
 
-    document.getElementById("performanceBadge").textContent =
-        performance;
+    const cpuUsageElement =
+        document.getElementById("cpuUsage");
 
-    document.getElementById("bottleneckText").textContent =
-        bottleneck;
+    const gpuUsageElement =
+        document.getElementById("gpuUsage");
 
-    document.getElementById("resultDescription").textContent =
-        game +
-        " • " +
-        gpu +
-        " • " +
-        resolution +
-        " • " +
-        quality;
+    const performanceBadge =
+        document.getElementById("performanceBadge");
+
+    const bottleneckText =
+        document.getElementById("bottleneckText");
+
+    const resultDescription =
+        document.getElementById("resultDescription");
+
+
+    if (fpsNumber) {
+        fpsNumber.textContent =
+            fps + " FPS";
+    }
+
+    if (averageFPS) {
+        averageFPS.textContent =
+            fps + " FPS";
+    }
+
+    if (onePercentElement) {
+        onePercentElement.textContent =
+            onePercent + " FPS";
+    }
+
+    if (cpuUsageElement) {
+        cpuUsageElement.textContent =
+            cpuUsage + "%";
+    }
+
+    if (gpuUsageElement) {
+        gpuUsageElement.textContent =
+            gpuUsage + "%";
+    }
+
+    if (performanceBadge) {
+        performanceBadge.textContent =
+            performanceText;
+    }
+
+    if (bottleneckText) {
+        bottleneckText.textContent =
+            bottleneck;
+    }
+
+    if (resultDescription) {
+
+        resultDescription.textContent =
+            game.name +
+            " • " +
+            cpu +
+            " • " +
+            gpu +
+            " • " +
+            resolution +
+            " • " +
+            quality;
+
+    }
 
 }
 
 
+// ============================================================
+// COMPARADOR DE GPU
+// ============================================================
+
 function setupComparison() {
 
-    const gpu1 = document.getElementById("compareGpu1");
-    const gpu2 = document.getElementById("compareGpu2");
+    const gpu1 =
+        document.getElementById("compareGpu1");
+
+    const gpu2 =
+        document.getElementById("compareGpu2");
 
     if (!gpu1 || !gpu2) {
         return;
     }
 
-    addOptions(gpu1, gpus);
-    addOptions(gpu2, gpus);
-
-    gpu2.selectedIndex = Math.min(
-        1,
-        gpus.length - 1
+    addOptions(
+        gpu1,
+        gpus
     );
+
+    addOptions(
+        gpu2,
+        gpus
+    );
+
+    if (gpus.length > 1) {
+        gpu2.selectedIndex = 1;
+    }
+
 
     function compare() {
 
-        const power1 = getGpuPower(gpu1.value);
-        const power2 = getGpuPower(gpu2.value);
+        const power1 =
+            getGpuPower(
+                gpu1.value
+            );
 
-        const difference = Math.round(
-            ((power1 - power2) / power2) * 100
-        );
+        const power2 =
+            getGpuPower(
+                gpu2.value
+            );
 
-        let text;
+        const difference =
+            Math.round(
+                ((power1 - power2) /
+                    power2) *
+                100
+            );
+
+        const result =
+            document.getElementById(
+                "compareResult"
+            );
+
+        if (!result) {
+            return;
+        }
 
         if (difference > 0) {
 
-            text =
+            result.textContent =
                 gpu1.value +
                 " es aproximadamente un " +
                 Math.abs(difference) +
@@ -815,7 +1298,7 @@ function setupComparison() {
         }
         else if (difference < 0) {
 
-            text =
+            result.textContent =
                 gpu2.value +
                 " es aproximadamente un " +
                 Math.abs(difference) +
@@ -826,15 +1309,13 @@ function setupComparison() {
         }
         else {
 
-            text =
+            result.textContent =
                 "Las dos gráficas tienen un rendimiento estimado similar.";
 
         }
 
-        document.getElementById("compareResult").textContent =
-            text;
-
     }
+
 
     gpu1.addEventListener(
         "change",
@@ -851,54 +1332,98 @@ function setupComparison() {
 }
 
 
+// ============================================================
+// CONTADORES
+// ============================================================
+
 function updateCounters() {
 
-    const gameCount = document.getElementById("gameCount");
-    const cpuCount = document.getElementById("cpuCount");
-    const gpuCount = document.getElementById("gpuCount");
+    const gameCount =
+        document.getElementById(
+            "gameCount"
+        );
+
+    const cpuCount =
+        document.getElementById(
+            "cpuCount"
+        );
+
+    const gpuCount =
+        document.getElementById(
+            "gpuCount"
+        );
+
 
     if (gameCount) {
-        gameCount.textContent = games.length;
+
+        gameCount.textContent =
+            games.length;
+
     }
 
     if (cpuCount) {
-        cpuCount.textContent = cpus.length;
+
+        cpuCount.textContent =
+            cpus.length;
+
     }
 
     if (gpuCount) {
-        gpuCount.textContent = gpus.length;
+
+        gpuCount.textContent =
+            gpus.length;
+
     }
 
 }
 
 
+// ============================================================
+// INICIO
+// ============================================================
+
 document.addEventListener(
     "DOMContentLoaded",
     function() {
 
+        // Cargar juegos
         addOptions(
             gameSelect,
-            games.map(function(game) {
-                return game.name;
-            })
+            games.map(
+                function(game) {
+                    return game.name;
+                }
+            )
         );
 
+
+        // Cargar CPUs
         addOptions(
             cpuSelect,
             cpus
         );
 
+
+        // Cargar GPUs
         addOptions(
             gpuSelect,
             gpus
         );
 
+
+        // Crear tarjetas
         loadGames();
 
+
+        // Contadores
         updateCounters();
 
+
+        // Comparador
         setupComparison();
 
+
+        // Buscador
         if (gameSearch) {
 
             gameSearch.addEventListener(
@@ -908,6 +1433,8 @@ document.addEventListener(
 
         }
 
+
+        // Botón calcular
         if (calculateButton) {
 
             calculateButton.addEventListener(
@@ -917,8 +1444,17 @@ document.addEventListener(
 
         }
 
+
+        // Calcular inicialmente
+        calculateFPS();
+
+
         console.log(
-            "FPSCalculator iniciado correctamente"
+            "================================="
+        );
+
+        console.log(
+            "FPSCalculator iniciado"
         );
 
         console.log(
@@ -934,6 +1470,10 @@ document.addEventListener(
         console.log(
             "GPUs:",
             gpus.length
+        );
+
+        console.log(
+            "================================="
         );
 
     }
