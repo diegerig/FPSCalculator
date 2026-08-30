@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://diegerig.github.io/FPSCalculator/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
-        <loc>https://diegerig.github.io/FPSCalculator/privacidad.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://diegerig.github.io/FPSCalculator/cookies.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://diegerig.github.io/FPSCalculator/contacto.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
+<url>
+<loc>https://diegerig.github.io/FPSCalculator/</loc>
+</url>
+<url>
+<loc>https://diegerig.github.io/FPSCalculator/privacidad.html</loc>
+</url>
+<url>
+<loc>https://diegerig.github.io/FPSCalculator/cookies.html</loc>
+</url>
+<url>
+<loc>https://diegerig.github.io/FPSCalculator/contacto.html</loc>
+</url>
 </urlset>
