@@ -12,4 +12,9 @@
     <url>
         <loc>https://diegerig.github.io/FPSCalculator/contacto.html</loc>
     </url>
+    <url>
+    <loc>https://diegerig.github.io/FPSCalculator/fortnite.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
 </urlset>
