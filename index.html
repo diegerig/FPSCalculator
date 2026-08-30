@@ -1,634 +1,796 @@
-
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FPSCalculator - Calculadora de FPS para PC</title>
+```
+<title>FPSCalculator - Calculadora de FPS para PC</title>
 
-    <meta
-        name="description"
-        content="Calcula los FPS aproximados de tu PC en Fortnite, GTA V, Minecraft, Warzone y muchos más juegos. Selecciona tu procesador, tarjeta gráfica, resolución y calidad."
-    >
+<meta
+    name="description"
+    content="Calcula los FPS aproximados de tu PC en Fortnite, GTA V, Minecraft, Warzone y muchos más juegos. Selecciona tu procesador, tarjeta gráfica, resolución y calidad."
+>
 
-    <meta name="robots" content="index, follow">
+<meta
+    name="keywords"
+    content="calculadora FPS, FPS Calculator, calcular FPS PC, FPS Fortnite, FPS GTA V, FPS Minecraft, FPS Warzone, rendimiento PC, tarjeta gráfica, procesador"
+>
 
-    <link
-        rel="canonical"
-        href="https://diegerig.github.io/FPSCalculator/"
-    >
+<meta name="author" content="FPSCalculator">
 
-    <meta
-        property="og:title"
-        content="FPSCalculator - Calculadora de FPS para PC"
-    >
+<meta name="robots" content="index, follow">
 
-    <meta
-        property="og:description"
-        content="Calcula los FPS aproximados de tu PC según tu procesador, tarjeta gráfica, juego, resolución y calidad."
-    >
+<link
+    rel="canonical"
+    href="https://diegerig.github.io/FPSCalculator/"
+>
 
-    <meta
-        property="og:url"
-        content="https://diegerig.github.io/FPSCalculator/"
-    >
+<!-- Open Graph -->
+<meta
+    property="og:title"
+    content="FPSCalculator - Calculadora de FPS para PC"
+>
 
-    <meta property="og:type" content="website">
+<meta
+    property="og:description"
+    content="Calcula los FPS aproximados de tu PC según tu procesador, tarjeta gráfica, juego, resolución y calidad."
+>
 
-    <meta
-        property="og:site_name"
-        content="FPSCalculator"
-    >
+<meta
+    property="og:url"
+    content="https://diegerig.github.io/FPSCalculator/"
+>
 
-    <link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+
+<meta
+    property="og:site_name"
+    content="FPSCalculator"
+>
+
+<meta
+    property="og:locale"
+    content="es_ES"
+>
+
+<!-- Twitter / X -->
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="FPSCalculator - Calculadora de FPS para PC"
+>
+
+<meta
+    name="twitter:description"
+    content="Calcula los FPS aproximados de tu PC en tus juegos favoritos."
+>
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FPSCalculator",
+    "url": "https://diegerig.github.io/FPSCalculator/",
+    "description": "Calculadora de FPS para PC que permite estimar el rendimiento en juegos según el procesador, tarjeta gráfica, resolución y calidad gráfica.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Windows",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "es",
+    "isAccessibleForFree": true
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
-
 
 <body>
 
 <header class="topbar">
 
-    <div class="container nav-container">
+```
+<div class="container nav-container">
 
-        <a href="#" class="brand">
-            <span class="brand-icon">⚡</span>
-            <span>FPS<span>Calculator</span></span>
-        </a>
+    <a href="#" class="brand" aria-label="FPSCalculator - Inicio">
+        <span class="brand-icon">⚡</span>
+        <span>FPS<span>Calculator</span></span>
+    </a>
 
-        <nav>
-            <a href="#calculator">Calculadora</a>
-            <a href="#games">Juegos</a>
-            <a href="#comparison">Comparador</a>
-        </nav>
+    <nav aria-label="Navegación principal">
+        <a href="#calculator">Calculadora</a>
+        <a href="#games">Juegos</a>
+        <a href="#comparison">Comparador</a>
+    </nav>
 
-    </div>
+</div>
+```
 
 </header>
 
-
 <main>
-
 
 <section class="hero">
 
-    <div class="container hero-container">
+```
+<div class="container hero-container">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="badge">
-                🎮 PC PERFORMANCE TOOL
-            </div>
-
-            <h1>
-                Descubre cuántos
-                <span>FPS</span>
-                tendrás
-            </h1>
-
-            <p>
-                Comprueba el rendimiento estimado de tu PC
-                en tus juegos favoritos seleccionando tu
-                CPU, GPU, resolución y calidad gráfica.
-            </p>
-
-            <a
-                href="#calculator"
-                class="primary-button"
-            >
-                🚀 Calcular FPS
-            </a>
-
+        <div class="badge">
+            🎮 PC PERFORMANCE TOOL
         </div>
 
-
-        <div class="hero-card">
-
-            <div class="hero-card-top">
-                <span>FPS ESTIMADOS</span>
-                <span class="live-dot">●</span>
-            </div>
-
-            <strong>144</strong>
-
+        <h1>
+            Calculadora de
             <span>FPS</span>
+            para PC
+        </h1>
 
-            <div class="fake-bar">
-                <div></div>
-            </div>
+        <p>
+            Descubre cuántos FPS puede alcanzar tu PC
+            en tus juegos favoritos. Selecciona tu
+            procesador, tarjeta gráfica, resolución
+            y calidad gráfica para obtener una estimación
+            del rendimiento.
+        </p>
 
-            <small>
-                Rendimiento estimado
-            </small>
-
-        </div>
+        <a
+            href="#calculator"
+            class="primary-button"
+        >
+            🚀 Calcular FPS
+        </a>
 
     </div>
 
+
+    <div class="hero-card">
+
+        <div class="hero-card-top">
+            <span>FPS ESTIMADOS</span>
+            <span class="live-dot">●</span>
+        </div>
+
+        <strong>144</strong>
+
+        <span>FPS</span>
+
+        <div class="fake-bar">
+            <div></div>
+        </div>
+
+        <small>
+            Rendimiento estimado
+        </small>
+
+    </div>
+
+</div>
+```
+
 </section>
-
-
 
 <section class="stats">
 
-    <div class="container stats-grid">
+```
+<div class="container stats-grid">
 
-        <div class="stat">
-            <strong id="gameCount">0</strong>
-            <span>Juegos</span>
-        </div>
-
-        <div class="stat">
-            <strong id="cpuCount">0</strong>
-            <span>Procesadores</span>
-        </div>
-
-        <div class="stat">
-            <strong id="gpuCount">0</strong>
-            <span>Tarjetas gráficas</span>
-        </div>
-
-        <div class="stat">
-            <strong>4K</strong>
-            <span>Resolución máxima</span>
-        </div>
-
+    <div class="stat">
+        <strong id="gameCount">0</strong>
+        <span>Juegos</span>
     </div>
 
+    <div class="stat">
+        <strong id="cpuCount">0</strong>
+        <span>Procesadores</span>
+    </div>
+
+    <div class="stat">
+        <strong id="gpuCount">0</strong>
+        <span>Tarjetas gráficas</span>
+    </div>
+
+    <div class="stat">
+        <strong>4K</strong>
+        <span>Resolución máxima</span>
+    </div>
+
+</div>
+```
+
 </section>
-
-
 
 <section
     id="calculator"
     class="section calculator-section"
 >
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <span>CALCULADORA</span>
+        <span>CALCULADORA FPS</span>
 
-            <h2>
-                Calcula el rendimiento de tu PC
-            </h2>
+        <h2>
+            Calcula los FPS de tu PC
+        </h2>
 
-            <p>
-                Introduce los componentes de tu ordenador
-                y configura el juego.
-            </p>
-
-        </div>
-
-
-        <div class="calculator-box">
-
-
-            <div class="field">
-
-                <label for="game">
-                    🎮 Juego
-                </label>
-
-                <select id="game">
-                    <option>
-                        Cargando juegos...
-                    </option>
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="cpu">
-                    🧠 Procesador
-                </label>
-
-                <select id="cpu">
-                    <option>
-                        Cargando procesadores...
-                    </option>
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="gpu">
-                    🎨 Tarjeta gráfica
-                </label>
-
-                <select id="gpu">
-                    <option>
-                        Cargando gráficas...
-                    </option>
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="resolution">
-                    🖥️ Resolución
-                </label>
-
-                <select id="resolution">
-
-                    <option value="720p">
-                        720p
-                    </option>
-
-                    <option
-                        value="1080p"
-                        selected
-                    >
-                        1080p
-                    </option>
-
-                    <option value="1440p">
-                        1440p
-                    </option>
-
-                    <option value="2160p">
-                        4K
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label for="quality">
-                    ⚙️ Calidad
-                </label>
-
-                <select id="quality">
-
-                    <option value="low">
-                        Baja
-                    </option>
-
-                    <option value="medium">
-                        Media
-                    </option>
-
-                    <option
-                        value="high"
-                        selected
-                    >
-                        Alta
-                    </option>
-
-                    <option value="ultra">
-                        Ultra
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <button
-                id="calculateButton"
-                class="calculate-button"
-            >
-                CALCULAR FPS
-            </button>
-
-        </div>
-
-
-
-        <div class="result-box">
-
-            <div class="result-highlight">
-
-                <span>
-                    FPS ESTIMADOS
-                </span>
-
-                <strong id="fpsNumber">
-                    -- FPS
-                </strong>
-
-                <b id="performanceBadge">
-                    --
-                </b>
-
-            </div>
-
-
-            <div class="result-stats">
-
-                <div>
-                    <span>FPS promedio</span>
-                    <strong id="averageFPS">--</strong>
-                </div>
-
-                <div>
-                    <span>1% Low</span>
-                    <strong id="onePercent">--</strong>
-                </div>
-
-                <div>
-                    <span>CPU</span>
-                    <strong id="cpuUsage">--</strong>
-                </div>
-
-                <div>
-                    <span>GPU</span>
-                    <strong id="gpuUsage">--</strong>
-                </div>
-
-                <div>
-                    <span>Cuello de botella</span>
-                    <strong id="bottleneckText">--</strong>
-                </div>
-
-            </div>
-
-
-            <p id="resultDescription">
-                Selecciona tu configuración y calcula
-                el rendimiento.
-            </p>
-
-        </div>
+        <p>
+            Selecciona tu juego, procesador, tarjeta gráfica,
+            resolución y calidad para obtener una estimación
+            del rendimiento.
+        </p>
 
     </div>
 
+
+    <div class="calculator-box">
+
+        <div class="field">
+
+            <label for="game">
+                🎮 Juego
+            </label>
+
+            <select id="game">
+                <option>
+                    Cargando juegos...
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="cpu">
+                🧠 Procesador
+            </label>
+
+            <select id="cpu">
+                <option>
+                    Cargando procesadores...
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="gpu">
+                🎨 Tarjeta gráfica
+            </label>
+
+            <select id="gpu">
+                <option>
+                    Cargando gráficas...
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="resolution">
+                🖥️ Resolución
+            </label>
+
+            <select id="resolution">
+
+                <option value="720p">
+                    720p
+                </option>
+
+                <option
+                    value="1080p"
+                    selected
+                >
+                    1080p
+                </option>
+
+                <option value="1440p">
+                    1440p
+                </option>
+
+                <option value="2160p">
+                    4K
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="quality">
+                ⚙️ Calidad gráfica
+            </label>
+
+            <select id="quality">
+
+                <option value="low">
+                    Baja
+                </option>
+
+                <option value="medium">
+                    Media
+                </option>
+
+                <option
+                    value="high"
+                    selected
+                >
+                    Alta
+                </option>
+
+                <option value="ultra">
+                    Ultra
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            id="calculateButton"
+            class="calculate-button"
+            type="button"
+        >
+            CALCULAR FPS
+        </button>
+
+    </div>
+
+
+    <div class="result-box">
+
+        <div class="result-highlight">
+
+            <span>
+                FPS ESTIMADOS
+            </span>
+
+            <strong id="fpsNumber">
+                -- FPS
+            </strong>
+
+            <b id="performanceBadge">
+                --
+            </b>
+
+        </div>
+
+
+        <div class="result-stats">
+
+            <div>
+                <span>FPS promedio</span>
+                <strong id="averageFPS">--</strong>
+            </div>
+
+            <div>
+                <span>1% Low</span>
+                <strong id="onePercent">--</strong>
+            </div>
+
+            <div>
+                <span>CPU</span>
+                <strong id="cpuUsage">--</strong>
+            </div>
+
+            <div>
+                <span>GPU</span>
+                <strong id="gpuUsage">--</strong>
+            </div>
+
+            <div>
+                <span>Cuello de botella</span>
+                <strong id="bottleneckText">--</strong>
+            </div>
+
+        </div>
+
+
+        <p id="resultDescription">
+            Selecciona tu configuración y calcula
+            el rendimiento.
+        </p>
+
+    </div>
+
+</div>
+```
+
 </section>
-
-
 
 <section
     id="games"
     class="section games-section"
 >
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <span>JUEGOS</span>
+        <span>JUEGOS</span>
 
-            <h2>
-                Elige tu juego
-            </h2>
+        <h2>
+            Calculadora de FPS por juego
+        </h2>
 
-            <p>
-                Busca y selecciona uno de los juegos
-                disponibles.
-            </p>
-
-        </div>
-
-
-        <div class="search-container">
-
-            <input
-                id="gameSearch"
-                type="search"
-                placeholder="🔎 Buscar juego..."
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <div
-            id="gamesGrid"
-            class="games-grid"
-        ></div>
+        <p>
+            Selecciona un juego para consultar el rendimiento
+            estimado de diferentes configuraciones de PC.
+        </p>
 
     </div>
 
+
+    <div class="search-container">
+
+        <label
+            for="gameSearch"
+            class="sr-only"
+        >
+            Buscar juego
+        </label>
+
+        <input
+            id="gameSearch"
+            type="search"
+            placeholder="🔎 Buscar juego..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <div
+        id="gamesGrid"
+        class="games-grid"
+    ></div>
+
+</div>
+```
+
 </section>
-
-
 
 <section
     id="comparison"
     class="section comparison-section"
 >
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <span>COMPARADOR</span>
+        <span>COMPARADOR DE GPU</span>
 
-            <h2>
-                Compara dos tarjetas gráficas
-            </h2>
+        <h2>
+            Compara dos tarjetas gráficas
+        </h2>
 
-            <p>
-                Descubre cuál ofrece mayor rendimiento
-                estimado.
-            </p>
+        <p>
+            Compara el rendimiento estimado de dos GPUs
+            para saber cuál puede ofrecer más FPS.
+        </p>
 
-        </div>
-
-
-        <div class="comparison-box">
-
-            <div class="field">
-
-                <label for="compareGpu1">
-                    GPU 1
-                </label>
-
-                <select id="compareGpu1"></select>
-
-            </div>
+    </div>
 
 
-            <div class="vs">
-                VS
-            </div>
+    <div class="comparison-box">
 
+        <div class="field">
 
-            <div class="field">
+            <label for="compareGpu1">
+                GPU 1
+            </label>
 
-                <label for="compareGpu2">
-                    GPU 2
-                </label>
-
-                <select id="compareGpu2"></select>
-
-            </div>
+            <select id="compareGpu1"></select>
 
         </div>
 
 
-        <div
-            id="compareResult"
-            class="compare-result"
-        >
-            Selecciona dos gráficas para compararlas.
+        <div class="vs">
+            VS
+        </div>
+
+
+        <div class="field">
+
+            <label for="compareGpu2">
+                GPU 2
+            </label>
+
+            <select id="compareGpu2"></select>
+
         </div>
 
     </div>
+
+
+    <div
+        id="compareResult"
+        class="compare-result"
+    >
+        Selecciona dos gráficas para compararlas.
+    </div>
+
+</div>
+```
 
 </section>
 
-
-
 <section class="section information">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading">
+    <div class="section-heading">
 
-            <span>FPSCALCULATOR</span>
+        <span>GUÍA FPS</span>
 
-            <h2>
-                Calcula tus FPS fácilmente
-            </h2>
+        <h2>
+            ¿Cómo calcular los FPS de un PC?
+        </h2>
 
-            <p>
-                Una herramienta sencilla para conocer
-                el rendimiento aproximado de tu PC.
-            </p>
-
-        </div>
-
-
-        <div class="info-grid">
-
-
-            <article class="info-card">
-
-                <div class="info-icon">
-                    🎮
-                </div>
-
-                <h3>
-                    Elige un juego
-                </h3>
-
-                <p>
-                    Busca tu juego favorito y selecciónalo
-                    para realizar el cálculo.
-                </p>
-
-            </article>
-
-
-            <article class="info-card">
-
-                <div class="info-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    Selecciona tu hardware
-                </h3>
-
-                <p>
-                    Elige el procesador y la tarjeta gráfica
-                    de tu ordenador.
-                </p>
-
-            </article>
-
-
-            <article class="info-card">
-
-                <div class="info-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Obtén una estimación
-                </h3>
-
-                <p>
-                    Consulta los FPS aproximados y otros
-                    datos de rendimiento.
-                </p>
-
-            </article>
-
-
-        </div>
+        <p>
+            Los FPS dependen principalmente de la tarjeta gráfica,
+            el procesador, el juego, la resolución y la calidad
+            gráfica utilizada.
+        </p>
 
     </div>
+
+
+    <div class="info-grid">
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                🎮
+            </div>
+
+            <h3>
+                Elige un juego
+            </h3>
+
+            <p>
+                Selecciona el juego que quieres analizar.
+                Cada videojuego tiene unos requisitos y un
+                rendimiento diferente.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                🧠
+            </div>
+
+            <h3>
+                Selecciona tu hardware
+            </h3>
+
+            <p>
+                El procesador y la tarjeta gráfica influyen
+                directamente en el rendimiento que puedes
+                conseguir en tus juegos.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                🖥️
+            </div>
+
+            <h3>
+                Configura la resolución
+            </h3>
+
+            <p>
+                Puedes calcular el rendimiento en 720p,
+                1080p, 1440p y 4K.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Elige la calidad gráfica
+            </h3>
+
+            <p>
+                Selecciona calidad baja, media, alta o ultra
+                para obtener una estimación diferente.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                📊
+            </div>
+
+            <h3>
+                Consulta los FPS
+            </h3>
+
+            <p>
+                La calculadora muestra una estimación de FPS
+                promedio, 1% Low y otros datos de rendimiento.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <div class="info-icon">
+                🔧
+            </div>
+
+            <h3>
+                Comprueba el cuello de botella
+            </h3>
+
+            <p>
+                Consulta una estimación del uso de CPU y GPU
+                y del posible cuello de botella del sistema.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section seo-content">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+
+        <span>RENDIMIENTO DE PC</span>
+
+        <h2>
+            Calculadora de FPS online
+        </h2>
+
+        <p>
+            FPSCalculator es una herramienta online para estimar
+            el rendimiento de un ordenador en videojuegos.
+        </p>
+
+    </div>
+
+    <div class="text-content">
+
+        <p>
+            Con FPSCalculator puedes estimar cuántos FPS puede
+            conseguir tu PC seleccionando diferentes procesadores,
+            tarjetas gráficas, juegos, resoluciones y niveles de
+            calidad gráfica.
+        </p>
+
+        <p>
+            La herramienta está pensada para ayudarte a conocer
+            de forma rápida el rendimiento aproximado de una
+            configuración antes de jugar o actualizar el hardware.
+        </p>
+
+        <p>
+            Puedes utilizar diferentes resoluciones, desde 720p
+            hasta 4K, y comparar tarjetas gráficas para encontrar
+            la configuración que mejor se adapte a tus necesidades.
+        </p>
+
+        <p>
+            Las cifras mostradas por FPSCalculator son estimaciones.
+            El rendimiento real puede variar dependiendo de los
+            controladores, temperaturas, memoria RAM, configuración
+            del juego, procesos en segundo plano y otros factores.
+        </p>
+
+    </div>
+
+</div>
+```
 
 </section>
 
 </main>
 
-
-
-
 <footer>
 
-    <div class="container footer-container">
+```
+<div class="container footer-container">
 
-        <div>
+    <div>
 
-            <div class="footer-brand">
-                ⚡ FPSCalculator
-            </div>
-
-            <p>
-                Calculadora de FPS para PC.
-            </p>
-
+        <div class="footer-brand">
+            ⚡ FPSCalculator
         </div>
 
-
-        <div class="footer-links">
-
-            <a href="index.html">
-                Inicio
-            </a>
-
-            <a href="privacidad.html">
-                Privacidad
-            </a>
-
-            <a href="cookies.html">
-                Cookies
-            </a>
-
-            <a href="contacto.html">
-                Contacto
-            </a>
-
-        </div>
-
-
-        <div class="copyright">
-
-            © 2026 FPSCalculator
-
-            <small>
-                Las cifras de FPS son estimaciones y pueden variar
-                dependiendo del hardware y la configuración.
-            </small>
-
-        </div>
+        <p>
+            Calculadora de FPS para PC.
+        </p>
 
     </div>
 
-</footer>
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="privacidad.html">
+            Privacidad
+        </a>
+
+        <a href="cookies.html">
+            Cookies
+        </a>
+
+        <a href="contacto.html">
+            Contacto
+        </a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 FPSCalculator
+
+        <small>
+            Las cifras de FPS son estimaciones y pueden variar
+            dependiendo del hardware y la configuración.
+        </small>
+
+    </div>
+
+</div>
 ```
 
-
-
+</footer>
 
 <script src="script.js"></script>
 
 </body>
 
 </html>
-```
