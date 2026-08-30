@@ -1,65 +1,66 @@
 // ============================================================
-// FPSCALCULATOR - SCRIPT COMPLETO CORREGIDO
+// FPSCALCULATOR - SCRIPT PRINCIPAL
+// RAWG + CALCULADORA FPS
 // ============================================================
 
 const API_URL = "https://fpscalculator-api.onrender.com";
 
 // ============================================================
-// JUEGOS
+// JUEGOS BASE
 // ============================================================
 
 const games = [
-{ name: "Fortnite", genre: "Battle Royale", performance: 1.30 },
-{ name: "Grand Theft Auto V", genre: "Mundo abierto", performance: 1.10 },
-{ name: "Grand Theft Auto V Enhanced", genre: "Mundo abierto", performance: 0.80 },
-{ name: "Red Dead Redemption 2", genre: "Mundo abierto", performance: 0.70 },
-{ name: "Cyberpunk 2077", genre: "RPG", performance: 0.65 },
-{ name: "Minecraft", genre: "Supervivencia", performance: 1.40 },
-{ name: "Counter-Strike 2", genre: "FPS", performance: 1.45 },
-{ name: "VALORANT", genre: "FPS", performance: 1.60 },
-{ name: "Apex Legends", genre: "Battle Royale", performance: 1.05 },
-{ name: "Call of Duty Warzone", genre: "FPS / Battle Royale", performance: 0.82 },
-{ name: "Rocket League", genre: "Deportes", performance: 1.60 },
-{ name: "EA Sports FC 25", genre: "Fútbol", performance: 1.30 },
-{ name: "EA Sports FC 26", genre: "Fútbol", performance: 1.20 },
-{ name: "Forza Horizon 5", genre: "Carreras", performance: 0.85 },
-{ name: "Forza Motorsport", genre: "Carreras", performance: 0.75 },
-{ name: "BeamNG.drive", genre: "Simulación", performance: 0.70 },
-{ name: "Rust", genre: "Supervivencia", performance: 0.75 },
-{ name: "The Forest", genre: "Terror", performance: 0.90 },
-{ name: "Sons of the Forest", genre: "Terror", performance: 0.65 },
-{ name: "Phasmophobia", genre: "Terror", performance: 1.10 },
-{ name: "Dead by Daylight", genre: "Terror", performance: 1.00 },
-{ name: "PUBG", genre: "Battle Royale", performance: 0.95 },
-{ name: "Overwatch 2", genre: "FPS", performance: 1.30 },
-{ name: "Rainbow Six Siege", genre: "FPS", performance: 1.35 },
-{ name: "The Witcher 3", genre: "RPG", performance: 0.85 },
-{ name: "Hogwarts Legacy", genre: "RPG", performance: 0.65 },
-{ name: "Elden Ring", genre: "RPG", performance: 0.75 },
-{ name: "Starfield", genre: "RPG", performance: 0.55 },
-{ name: "Battlefield 2042", genre: "FPS", performance: 0.75 },
-{ name: "The Finals", genre: "FPS", performance: 0.85 },
-{ name: "Destiny 2", genre: "FPS", performance: 1.00 },
-{ name: "Dying Light 2", genre: "Acción / Terror", performance: 0.65 },
-{ name: "Assassin's Creed Valhalla", genre: "Acción", performance: 0.70 },
-{ name: "Assassin's Creed Mirage", genre: "Acción", performance: 0.75 },
-{ name: "Far Cry 6", genre: "FPS / Acción", performance: 0.75 },
-{ name: "Horizon Zero Dawn", genre: "Acción / RPG", performance: 0.80 },
-{ name: "Horizon Forbidden West", genre: "Acción / RPG", performance: 0.65 },
-{ name: "God of War", genre: "Acción", performance: 0.75 },
-{ name: "God of War Ragnarök", genre: "Acción", performance: 0.65 },
-{ name: "Marvel Rivals", genre: "FPS / Acción", performance: 0.75 },
-{ name: "Palworld", genre: "Supervivencia", performance: 0.70 },
-{ name: "ARK: Survival Ascended", genre: "Supervivencia", performance: 0.45 },
-{ name: "Euro Truck Simulator 2", genre: "Simulación", performance: 1.25 },
-{ name: "American Truck Simulator", genre: "Simulación", performance: 1.20 },
-{ name: "Garry's Mod", genre: "Sandbox", performance: 1.35 },
-{ name: "Terraria", genre: "Sandbox", performance: 1.80 },
-{ name: "Lethal Company", genre: "Terror", performance: 1.20 },
-{ name: "Left 4 Dead 2", genre: "FPS / Terror", performance: 1.70 },
-{ name: "Grand Theft Auto IV", genre: "Mundo abierto", performance: 0.90 },
-{ name: "Fallout 4", genre: "RPG", performance: 0.90 },
-{ name: "Resident Evil 4", genre: "Terror / Acción", performance: 0.75 }
+    { name: "Fortnite", genre: "Battle Royale", performance: 1.30 },
+    { name: "Grand Theft Auto V", genre: "Mundo abierto", performance: 1.10 },
+    { name: "Grand Theft Auto V Enhanced", genre: "Mundo abierto", performance: 0.80 },
+    { name: "Red Dead Redemption 2", genre: "Mundo abierto", performance: 0.70 },
+    { name: "Cyberpunk 2077", genre: "RPG", performance: 0.65 },
+    { name: "Minecraft", genre: "Supervivencia", performance: 1.40 },
+    { name: "Counter-Strike 2", genre: "FPS", performance: 1.45 },
+    { name: "VALORANT", genre: "FPS", performance: 1.60 },
+    { name: "Apex Legends", genre: "Battle Royale", performance: 1.05 },
+    { name: "Call of Duty Warzone", genre: "FPS / Battle Royale", performance: 0.82 },
+    { name: "Rocket League", genre: "Deportes", performance: 1.60 },
+    { name: "EA Sports FC 25", genre: "Fútbol", performance: 1.30 },
+    { name: "EA Sports FC 26", genre: "Fútbol", performance: 1.20 },
+    { name: "Forza Horizon 5", genre: "Carreras", performance: 0.85 },
+    { name: "Forza Motorsport", genre: "Carreras", performance: 0.75 },
+    { name: "BeamNG.drive", genre: "Simulación", performance: 0.70 },
+    { name: "Rust", genre: "Supervivencia", performance: 0.75 },
+    { name: "The Forest", genre: "Terror", performance: 0.90 },
+    { name: "Sons of the Forest", genre: "Terror", performance: 0.65 },
+    { name: "Phasmophobia", genre: "Terror", performance: 1.10 },
+    { name: "Dead by Daylight", genre: "Terror", performance: 1.00 },
+    { name: "PUBG", genre: "Battle Royale", performance: 0.95 },
+    { name: "Overwatch 2", genre: "FPS", performance: 1.30 },
+    { name: "Rainbow Six Siege", genre: "FPS", performance: 1.35 },
+    { name: "The Witcher 3", genre: "RPG", performance: 0.85 },
+    { name: "Hogwarts Legacy", genre: "RPG", performance: 0.65 },
+    { name: "Elden Ring", genre: "RPG", performance: 0.75 },
+    { name: "Starfield", genre: "RPG", performance: 0.55 },
+    { name: "Battlefield 2042", genre: "FPS", performance: 0.75 },
+    { name: "The Finals", genre: "FPS", performance: 0.85 },
+    { name: "Destiny 2", genre: "FPS", performance: 1.00 },
+    { name: "Dying Light 2", genre: "Acción / Terror", performance: 0.65 },
+    { name: "Assassin's Creed Valhalla", genre: "Acción", performance: 0.70 },
+    { name: "Assassin's Creed Mirage", genre: "Acción", performance: 0.75 },
+    { name: "Far Cry 6", genre: "FPS / Acción", performance: 0.75 },
+    { name: "Horizon Zero Dawn", genre: "Acción / RPG", performance: 0.80 },
+    { name: "Horizon Forbidden West", genre: "Acción / RPG", performance: 0.65 },
+    { name: "God of War", genre: "Acción", performance: 0.75 },
+    { name: "God of War Ragnarök", genre: "Acción", performance: 0.65 },
+    { name: "Marvel Rivals", genre: "FPS / Acción", performance: 0.75 },
+    { name: "Palworld", genre: "Supervivencia", performance: 0.70 },
+    { name: "ARK: Survival Ascended", genre: "Supervivencia", performance: 0.45 },
+    { name: "Euro Truck Simulator 2", genre: "Simulación", performance: 1.25 },
+    { name: "American Truck Simulator", genre: "Simulación", performance: 1.20 },
+    { name: "Garry's Mod", genre: "Sandbox", performance: 1.35 },
+    { name: "Terraria", genre: "Sandbox", performance: 1.80 },
+    { name: "Lethal Company", genre: "Terror", performance: 1.20 },
+    { name: "Left 4 Dead 2", genre: "FPS / Terror", performance: 1.70 },
+    { name: "Grand Theft Auto IV", genre: "Mundo abierto", performance: 0.90 },
+    { name: "Fallout 4", genre: "RPG", performance: 0.90 },
+    { name: "Resident Evil 4", genre: "Terror / Acción", performance: 0.75 }
 ];
 
 // ============================================================
@@ -67,117 +68,116 @@ const games = [
 // ============================================================
 
 const cpus = [
-"Intel Core i3-8100",
-"Intel Core i3-9100F",
-"Intel Core i3-10100",
-"Intel Core i3-10100F",
-"Intel Core i3-12100",
-"Intel Core i3-12100F",
-"Intel Core i3-13100",
-"Intel Core i3-13100F",
-"Intel Core i3-14100",
-"Intel Core i3-14100F",
 
-```
-"Intel Core i5-8400",
-"Intel Core i5-8500",
-"Intel Core i5-8600K",
-"Intel Core i5-9400F",
-"Intel Core i5-9600K",
-"Intel Core i5-10400",
-"Intel Core i5-10400F",
-"Intel Core i5-10600K",
-"Intel Core i5-11400",
-"Intel Core i5-11400F",
-"Intel Core i5-11600K",
-"Intel Core i5-12400",
-"Intel Core i5-12400F",
-"Intel Core i5-12600K",
-"Intel Core i5-13400",
-"Intel Core i5-13400F",
-"Intel Core i5-13600K",
-"Intel Core i5-14400",
-"Intel Core i5-14400F",
-"Intel Core i5-14600K",
+    "Intel Core i3-8100",
+    "Intel Core i3-9100F",
+    "Intel Core i3-10100",
+    "Intel Core i3-10100F",
+    "Intel Core i3-12100",
+    "Intel Core i3-12100F",
+    "Intel Core i3-13100",
+    "Intel Core i3-13100F",
+    "Intel Core i3-14100",
+    "Intel Core i3-14100F",
 
-"Intel Core i7-8700",
-"Intel Core i7-8700K",
-"Intel Core i7-9700K",
-"Intel Core i7-10700",
-"Intel Core i7-10700K",
-"Intel Core i7-11700",
-"Intel Core i7-11700K",
-"Intel Core i7-12700",
-"Intel Core i7-12700K",
-"Intel Core i7-13700",
-"Intel Core i7-13700K",
-"Intel Core i7-14700",
-"Intel Core i7-14700K",
+    "Intel Core i5-8400",
+    "Intel Core i5-8500",
+    "Intel Core i5-8600K",
+    "Intel Core i5-9400F",
+    "Intel Core i5-9600K",
+    "Intel Core i5-10400",
+    "Intel Core i5-10400F",
+    "Intel Core i5-10600K",
+    "Intel Core i5-11400",
+    "Intel Core i5-11400F",
+    "Intel Core i5-11600K",
+    "Intel Core i5-12400",
+    "Intel Core i5-12400F",
+    "Intel Core i5-12600K",
+    "Intel Core i5-13400",
+    "Intel Core i5-13400F",
+    "Intel Core i5-13600K",
+    "Intel Core i5-14400",
+    "Intel Core i5-14400F",
+    "Intel Core i5-14600K",
 
-"Intel Core i9-9900K",
-"Intel Core i9-10900K",
-"Intel Core i9-11900K",
-"Intel Core i9-12900K",
-"Intel Core i9-13900K",
-"Intel Core i9-14900K",
+    "Intel Core i7-8700",
+    "Intel Core i7-8700K",
+    "Intel Core i7-9700K",
+    "Intel Core i7-10700",
+    "Intel Core i7-10700K",
+    "Intel Core i7-11700",
+    "Intel Core i7-11700K",
+    "Intel Core i7-12700",
+    "Intel Core i7-12700K",
+    "Intel Core i7-13700",
+    "Intel Core i7-13700K",
+    "Intel Core i7-14700",
+    "Intel Core i7-14700K",
 
-"AMD Ryzen 3 1200",
-"AMD Ryzen 3 2200G",
-"AMD Ryzen 3 3100",
-"AMD Ryzen 3 3300X",
-"AMD Ryzen 3 4100",
-"AMD Ryzen 3 4300G",
-"AMD Ryzen 3 5300G",
+    "Intel Core i9-9900K",
+    "Intel Core i9-10900K",
+    "Intel Core i9-11900K",
+    "Intel Core i9-12900K",
+    "Intel Core i9-13900K",
+    "Intel Core i9-14900K",
 
-"AMD Ryzen 5 1600",
-"AMD Ryzen 5 1600 AF",
-"AMD Ryzen 5 2600",
-"AMD Ryzen 5 2600X",
-"AMD Ryzen 5 3600",
-"AMD Ryzen 5 3600X",
-"AMD Ryzen 5 4500",
-"AMD Ryzen 5 4600G",
-"AMD Ryzen 5 5500",
-"AMD Ryzen 5 5500GT",
-"AMD Ryzen 5 5600",
-"AMD Ryzen 5 5600G",
-"AMD Ryzen 5 5600X",
-"AMD Ryzen 5 5700G",
-"AMD Ryzen 5 7600",
-"AMD Ryzen 5 7600X",
-"AMD Ryzen 5 8400F",
-"AMD Ryzen 5 8500G",
-"AMD Ryzen 5 8600G",
-"AMD Ryzen 5 9600X",
+    "AMD Ryzen 3 1200",
+    "AMD Ryzen 3 2200G",
+    "AMD Ryzen 3 3100",
+    "AMD Ryzen 3 3300X",
+    "AMD Ryzen 3 4100",
+    "AMD Ryzen 3 4300G",
+    "AMD Ryzen 3 5300G",
 
-"AMD Ryzen 7 1700",
-"AMD Ryzen 7 2700",
-"AMD Ryzen 7 2700X",
-"AMD Ryzen 7 3700X",
-"AMD Ryzen 7 3800X",
-"AMD Ryzen 7 5700X",
-"AMD Ryzen 7 5800X",
-"AMD Ryzen 7 5800X3D",
-"AMD Ryzen 7 7700",
-"AMD Ryzen 7 7700X",
-"AMD Ryzen 7 7800X3D",
-"AMD Ryzen 7 8700G",
-"AMD Ryzen 7 9700X",
-"AMD Ryzen 7 9800X3D",
+    "AMD Ryzen 5 1600",
+    "AMD Ryzen 5 1600 AF",
+    "AMD Ryzen 5 2600",
+    "AMD Ryzen 5 2600X",
+    "AMD Ryzen 5 3600",
+    "AMD Ryzen 5 3600X",
+    "AMD Ryzen 5 4500",
+    "AMD Ryzen 5 4600G",
+    "AMD Ryzen 5 5500",
+    "AMD Ryzen 5 5500GT",
+    "AMD Ryzen 5 5600",
+    "AMD Ryzen 5 5600G",
+    "AMD Ryzen 5 5600X",
+    "AMD Ryzen 5 5700G",
+    "AMD Ryzen 5 7600",
+    "AMD Ryzen 5 7600X",
+    "AMD Ryzen 5 8400F",
+    "AMD Ryzen 5 8500G",
+    "AMD Ryzen 5 8600G",
+    "AMD Ryzen 5 9600X",
 
-"AMD Ryzen 9 3900X",
-"AMD Ryzen 9 3950X",
-"AMD Ryzen 9 5900X",
-"AMD Ryzen 9 5950X",
-"AMD Ryzen 9 7900",
-"AMD Ryzen 9 7900X",
-"AMD Ryzen 9 7950X",
-"AMD Ryzen 9 7950X3D",
-"AMD Ryzen 9 9900X",
-"AMD Ryzen 9 9950X",
-"AMD Ryzen 9 9950X3D"
-```
+    "AMD Ryzen 7 1700",
+    "AMD Ryzen 7 2700",
+    "AMD Ryzen 7 2700X",
+    "AMD Ryzen 7 3700X",
+    "AMD Ryzen 7 3800X",
+    "AMD Ryzen 7 5700X",
+    "AMD Ryzen 7 5700G",
+    "AMD Ryzen 7 5800X",
+    "AMD Ryzen 7 5800X3D",
+    "AMD Ryzen 7 7700",
+    "AMD Ryzen 7 7700X",
+    "AMD Ryzen 7 7800X3D",
+    "AMD Ryzen 7 8700G",
+    "AMD Ryzen 7 9700X",
+    "AMD Ryzen 7 9800X3D",
 
+    "AMD Ryzen 9 3900X",
+    "AMD Ryzen 9 3950X",
+    "AMD Ryzen 9 5900X",
+    "AMD Ryzen 9 5950X",
+    "AMD Ryzen 9 7900",
+    "AMD Ryzen 9 7900X",
+    "AMD Ryzen 9 7950X",
+    "AMD Ryzen 9 7950X3D",
+    "AMD Ryzen 9 9900X",
+    "AMD Ryzen 9 9950X",
+    "AMD Ryzen 9 9950X3D"
 ];
 
 // ============================================================
@@ -185,157 +185,295 @@ const cpus = [
 // ============================================================
 
 const gpus = [
-"NVIDIA GTX 750",
-"NVIDIA GTX 750 Ti",
-"NVIDIA GTX 760",
-"NVIDIA GTX 770",
-"NVIDIA GTX 780",
-"NVIDIA GTX 780 Ti",
-"NVIDIA GTX 950",
-"NVIDIA GTX 960",
-"NVIDIA GTX 970",
-"NVIDIA GTX 980",
-"NVIDIA GTX 980 Ti",
-"NVIDIA GTX 1050",
-"NVIDIA GTX 1050 Ti",
-"NVIDIA GTX 1060 3GB",
-"NVIDIA GTX 1060 6GB",
-"NVIDIA GTX 1070",
-"NVIDIA GTX 1070 Ti",
-"NVIDIA GTX 1080",
-"NVIDIA GTX 1080 Ti",
-"NVIDIA GTX 1630",
-"NVIDIA GTX 1650",
-"NVIDIA GTX 1650 Super",
-"NVIDIA GTX 1660",
-"NVIDIA GTX 1660 Super",
-"NVIDIA GTX 1660 Ti",
-"NVIDIA RTX 2060",
-"NVIDIA RTX 2060 Super",
-"NVIDIA RTX 2070",
-"NVIDIA RTX 2070 Super",
-"NVIDIA RTX 2080",
-"NVIDIA RTX 2080 Super",
-"NVIDIA RTX 2080 Ti",
-"NVIDIA RTX 3050",
-"NVIDIA RTX 3060",
-"NVIDIA RTX 3060 Ti",
-"NVIDIA RTX 3070",
-"NVIDIA RTX 3070 Ti",
-"NVIDIA RTX 3080",
-"NVIDIA RTX 3080 Ti",
-"NVIDIA RTX 3090",
-"NVIDIA RTX 3090 Ti",
-"NVIDIA RTX 4060",
-"NVIDIA RTX 4060 Ti",
-"NVIDIA RTX 4070",
-"NVIDIA RTX 4070 Super",
-"NVIDIA RTX 4070 Ti",
-"NVIDIA RTX 4070 Ti Super",
-"NVIDIA RTX 4080",
-"NVIDIA RTX 4080 Super",
-"NVIDIA RTX 4090",
-"NVIDIA RTX 5060",
-"NVIDIA RTX 5060 Ti",
-"NVIDIA RTX 5070",
-"NVIDIA RTX 5070 Ti",
-"NVIDIA RTX 5080",
-"NVIDIA RTX 5090",
 
-```
-"AMD RX 460",
-"AMD RX 470",
-"AMD RX 480",
-"AMD RX 550",
-"AMD RX 560",
-"AMD RX 570",
-"AMD RX 580",
-"AMD RX 590",
-"AMD Vega 3",
-"AMD Vega 6",
-"AMD Vega 7",
-"AMD Vega 8",
-"AMD Vega 10",
-"AMD Vega 11",
-"AMD RX 5500 XT",
-"AMD RX 5600 XT",
-"AMD RX 5700",
-"AMD RX 5700 XT",
-"AMD RX 6400",
-"AMD RX 6500 XT",
-"AMD RX 6600",
-"AMD RX 6600 XT",
-"AMD RX 6650 XT",
-"AMD RX 6700",
-"AMD RX 6700 XT",
-"AMD RX 6750 XT",
-"AMD RX 6800",
-"AMD RX 6800 XT",
-"AMD RX 6900 XT",
-"AMD RX 6950 XT",
-"AMD RX 7600",
-"AMD RX 7600 XT",
-"AMD RX 7700 XT",
-"AMD RX 7800 XT",
-"AMD RX 7900 GRE",
-"AMD RX 7900 XT",
-"AMD RX 7900 XTX",
-"AMD RX 9060 XT",
-"AMD RX 9070",
-"AMD RX 9070 XT",
+    "NVIDIA GTX 750",
+    "NVIDIA GTX 750 Ti",
+    "NVIDIA GTX 760",
+    "NVIDIA GTX 770",
+    "NVIDIA GTX 780",
+    "NVIDIA GTX 780 Ti",
 
-"Intel UHD 610",
-"Intel UHD 620",
-"Intel UHD 630",
-"Intel UHD 730",
-"Intel UHD 750",
-"Intel UHD 770",
-"Intel Iris Xe",
-"Intel Arc A310",
-"Intel Arc A380",
-"Intel Arc A580",
-"Intel Arc A750",
-"Intel Arc A770",
-"Intel Arc B580"
-```
+    "NVIDIA GTX 950",
+    "NVIDIA GTX 960",
+    "NVIDIA GTX 970",
+    "NVIDIA GTX 980",
+    "NVIDIA GTX 980 Ti",
 
+    "NVIDIA GTX 1050",
+    "NVIDIA GTX 1050 Ti",
+    "NVIDIA GTX 1060 3GB",
+    "NVIDIA GTX 1060 6GB",
+    "NVIDIA GTX 1070",
+    "NVIDIA GTX 1070 Ti",
+    "NVIDIA GTX 1080",
+    "NVIDIA GTX 1080 Ti",
+
+    "NVIDIA GTX 1630",
+    "NVIDIA GTX 1650",
+    "NVIDIA GTX 1650 Super",
+    "NVIDIA GTX 1660",
+    "NVIDIA GTX 1660 Super",
+    "NVIDIA GTX 1660 Ti",
+
+    "NVIDIA RTX 2060",
+    "NVIDIA RTX 2060 Super",
+    "NVIDIA RTX 2070",
+    "NVIDIA RTX 2070 Super",
+    "NVIDIA RTX 2080",
+    "NVIDIA RTX 2080 Super",
+    "NVIDIA RTX 2080 Ti",
+
+    "NVIDIA RTX 3050",
+    "NVIDIA RTX 3060",
+    "NVIDIA RTX 3060 Ti",
+    "NVIDIA RTX 3070",
+    "NVIDIA RTX 3070 Ti",
+    "NVIDIA RTX 3080",
+    "NVIDIA RTX 3080 Ti",
+    "NVIDIA RTX 3090",
+    "NVIDIA RTX 3090 Ti",
+
+    "NVIDIA RTX 4060",
+    "NVIDIA RTX 4060 Ti",
+    "NVIDIA RTX 4070",
+    "NVIDIA RTX 4070 Super",
+    "NVIDIA RTX 4070 Ti",
+    "NVIDIA RTX 4070 Ti Super",
+    "NVIDIA RTX 4080",
+    "NVIDIA RTX 4080 Super",
+    "NVIDIA RTX 4090",
+
+    "NVIDIA RTX 5060",
+    "NVIDIA RTX 5060 Ti",
+    "NVIDIA RTX 5070",
+    "NVIDIA RTX 5070 Ti",
+    "NVIDIA RTX 5080",
+    "NVIDIA RTX 5090",
+
+    "AMD RX 460",
+    "AMD RX 470",
+    "AMD RX 480",
+    "AMD RX 550",
+    "AMD RX 560",
+    "AMD RX 570",
+    "AMD RX 580",
+    "AMD RX 590",
+
+    "AMD Vega 3",
+    "AMD Vega 6",
+    "AMD Vega 7",
+    "AMD Vega 8",
+    "AMD Vega 10",
+    "AMD Vega 11",
+
+    "AMD RX 5500 XT",
+    "AMD RX 5600 XT",
+    "AMD RX 5700",
+    "AMD RX 5700 XT",
+
+    "AMD RX 6400",
+    "AMD RX 6500 XT",
+    "AMD RX 6600",
+    "AMD RX 6600 XT",
+    "AMD RX 6650 XT",
+    "AMD RX 6700",
+    "AMD RX 6700 XT",
+    "AMD RX 6750 XT",
+    "AMD RX 6800",
+    "AMD RX 6800 XT",
+    "AMD RX 6900 XT",
+    "AMD RX 6950 XT",
+
+    "AMD RX 7600",
+    "AMD RX 7600 XT",
+    "AMD RX 7700 XT",
+    "AMD RX 7800 XT",
+    "AMD RX 7900 GRE",
+    "AMD RX 7900 XT",
+    "AMD RX 7900 XTX",
+
+    "AMD RX 9060 XT",
+    "AMD RX 9070",
+    "AMD RX 9070 XT",
+
+    "Intel UHD 610",
+    "Intel UHD 620",
+    "Intel UHD 630",
+    "Intel UHD 730",
+    "Intel UHD 750",
+    "Intel UHD 770",
+    "Intel Iris Xe",
+
+    "Intel Arc A310",
+    "Intel Arc A380",
+    "Intel Arc A580",
+    "Intel Arc A750",
+    "Intel Arc A770",
+    "Intel Arc B580"
 ];
 
 // ============================================================
 // POTENCIA GPU
 // ============================================================
 
-const gpuPower = {};
+const gpuPower = {
 
-gpus.forEach(function (gpu, index) {
-gpuPower[gpu] = 10 + (index * 2);
-});
+    "NVIDIA GTX 750": 12,
+    "NVIDIA GTX 750 Ti": 15,
+    "NVIDIA GTX 760": 20,
+    "NVIDIA GTX 770": 25,
+    "NVIDIA GTX 780": 30,
+    "NVIDIA GTX 780 Ti": 33,
 
-// Valores especiales para evitar resultados absurdos
-gpuPower["AMD Vega 3"] = 8;
-gpuPower["AMD Vega 6"] = 12;
-gpuPower["AMD Vega 7"] = 15;
-gpuPower["AMD Vega 8"] = 17;
-gpuPower["AMD Vega 10"] = 20;
-gpuPower["AMD Vega 11"] = 22;
+    "NVIDIA GTX 950": 20,
+    "NVIDIA GTX 960": 25,
+    "NVIDIA GTX 970": 35,
+    "NVIDIA GTX 980": 40,
+    "NVIDIA GTX 980 Ti": 45,
 
-gpuPower["NVIDIA RTX 4090"] = 200;
-gpuPower["NVIDIA RTX 5090"] = 230;
-gpuPower["AMD RX 7900 XTX"] = 155;
-gpuPower["AMD RX 9070 XT"] = 150;
+    "NVIDIA GTX 1050": 25,
+    "NVIDIA GTX 1050 Ti": 30,
+    "NVIDIA GTX 1060 3GB": 40,
+    "NVIDIA GTX 1060 6GB": 45,
+    "NVIDIA GTX 1070": 55,
+    "NVIDIA GTX 1070 Ti": 60,
+    "NVIDIA GTX 1080": 65,
+    "NVIDIA GTX 1080 Ti": 75,
+
+    "NVIDIA GTX 1630": 30,
+    "NVIDIA GTX 1650": 40,
+    "NVIDIA GTX 1650 Super": 45,
+    "NVIDIA GTX 1660": 50,
+    "NVIDIA GTX 1660 Super": 55,
+    "NVIDIA GTX 1660 Ti": 58,
+
+    "NVIDIA RTX 2060": 65,
+    "NVIDIA RTX 2060 Super": 72,
+    "NVIDIA RTX 2070": 78,
+    "NVIDIA RTX 2070 Super": 85,
+    "NVIDIA RTX 2080": 92,
+    "NVIDIA RTX 2080 Super": 98,
+    "NVIDIA RTX 2080 Ti": 105,
+
+    "NVIDIA RTX 3050": 55,
+    "NVIDIA RTX 3060": 70,
+    "NVIDIA RTX 3060 Ti": 85,
+    "NVIDIA RTX 3070": 95,
+    "NVIDIA RTX 3070 Ti": 100,
+    "NVIDIA RTX 3080": 115,
+    "NVIDIA RTX 3080 Ti": 125,
+    "NVIDIA RTX 3090": 130,
+    "NVIDIA RTX 3090 Ti": 140,
+
+    "NVIDIA RTX 4060": 75,
+    "NVIDIA RTX 4060 Ti": 85,
+    "NVIDIA RTX 4070": 105,
+    "NVIDIA RTX 4070 Super": 115,
+    "NVIDIA RTX 4070 Ti": 125,
+    "NVIDIA RTX 4070 Ti Super": 135,
+    "NVIDIA RTX 4080": 155,
+    "NVIDIA RTX 4080 Super": 165,
+    "NVIDIA RTX 4090": 200,
+
+    "NVIDIA RTX 5060": 90,
+    "NVIDIA RTX 5060 Ti": 100,
+    "NVIDIA RTX 5070": 125,
+    "NVIDIA RTX 5070 Ti": 145,
+    "NVIDIA RTX 5080": 175,
+    "NVIDIA RTX 5090": 230,
+
+    "AMD RX 460": 15,
+    "AMD RX 470": 25,
+    "AMD RX 480": 30,
+    "AMD RX 550": 15,
+    "AMD RX 560": 20,
+    "AMD RX 570": 32,
+    "AMD RX 580": 38,
+    "AMD RX 590": 42,
+
+    "AMD Vega 3": 8,
+    "AMD Vega 6": 12,
+    "AMD Vega 7": 15,
+    "AMD Vega 8": 17,
+    "AMD Vega 10": 20,
+    "AMD Vega 11": 22,
+
+    "AMD RX 5500 XT": 48,
+    "AMD RX 5600 XT": 58,
+    "AMD RX 5700": 65,
+    "AMD RX 5700 XT": 72,
+
+    "AMD RX 6400": 30,
+    "AMD RX 6500 XT": 38,
+    "AMD RX 6600": 62,
+    "AMD RX 6600 XT": 70,
+    "AMD RX 6650 XT": 75,
+    "AMD RX 6700": 78,
+    "AMD RX 6700 XT": 88,
+    "AMD RX 6750 XT": 93,
+    "AMD RX 6800": 100,
+    "AMD RX 6800 XT": 115,
+    "AMD RX 6900 XT": 125,
+    "AMD RX 6950 XT": 135,
+
+    "AMD RX 7600": 70,
+    "AMD RX 7600 XT": 78,
+    "AMD RX 7700 XT": 95,
+    "AMD RX 7800 XT": 110,
+    "AMD RX 7900 GRE": 120,
+    "AMD RX 7900 XT": 135,
+    "AMD RX 7900 XTX": 155,
+
+    "AMD RX 9060 XT": 105,
+    "AMD RX 9070": 135,
+    "AMD RX 9070 XT": 150,
+
+    "Intel UHD 610": 7,
+    "Intel UHD 620": 9,
+    "Intel UHD 630": 10,
+    "Intel UHD 730": 15,
+    "Intel UHD 750": 17,
+    "Intel UHD 770": 20,
+    "Intel Iris Xe": 25,
+
+    "Intel Arc A310": 35,
+    "Intel Arc A380": 40,
+    "Intel Arc A580": 65,
+    "Intel Arc A750": 75,
+    "Intel Arc A770": 82,
+    "Intel Arc B580": 100
+};
+
+function getGpuPower(gpu) {
+    return gpuPower[gpu] || 50;
+}
 
 // ============================================================
 // POTENCIA CPU
 // ============================================================
 
-const cpuPower = {};
+function getCpuPower(cpu) {
 
-cpus.forEach(function (cpu, index) {
-cpuPower[cpu] = 35 + (index * 0.9);
-});
+    let power = 50;
+
+    if (cpu.includes("i3")) power = 45;
+    if (cpu.includes("i5")) power = 65;
+    if (cpu.includes("i7")) power = 80;
+    if (cpu.includes("i9")) power = 95;
+
+    if (cpu.includes("Ryzen 3")) power = 45;
+    if (cpu.includes("Ryzen 5")) power = 65;
+    if (cpu.includes("Ryzen 7")) power = 80;
+    if (cpu.includes("Ryzen 9")) power = 95;
+
+    if (cpu.includes("X3D")) power += 10;
+    if (cpu.includes("G")) power -= 5;
+
+    return power;
+}
 
 // ============================================================
-// ELEMENTOS HTML
+// ELEMENTOS
 // ============================================================
 
 const gameSelect = document.getElementById("game");
@@ -347,204 +485,145 @@ const gameSearch = document.getElementById("gameSearch");
 const calculateButton = document.getElementById("calculateButton");
 
 // ============================================================
-// AÑADIR OPCIONES
+// OPCIONES SELECT
 // ============================================================
 
 function addOptions(select, items) {
 
-```
-if (!select) {
-    return;
-}
+    if (!select) return;
 
-select.innerHTML = "";
+    select.innerHTML = "";
 
-items.forEach(function (item) {
+    items.forEach(item => {
 
-    const option = document.createElement("option");
+        const option = document.createElement("option");
 
-    option.value = item;
-    option.textContent = item;
+        option.value = item;
+        option.textContent = item;
 
-    select.appendChild(option);
-});
-```
+        select.appendChild(option);
 
+    });
 }
 
 // ============================================================
-// ESCAPAR HTML
-// ============================================================
-
-function escapeHTML(value) {
-
-```
-return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-```
-
-}
-
-// ============================================================
-// RAWG
-// ============================================================
-
-async function getRawgGame(gameName) {
-
-```
-try {
-
-    const url =
-        API_URL +
-        "/api/games?search=" +
-        encodeURIComponent(gameName) +
-        "&page_size=1";
-
-    const response = await fetch(url);
-
-    if (!response.ok) {
-        throw new Error("HTTP " + response.status);
-    }
-
-    const data = await response.json();
-
-    if (
-        data &&
-        Array.isArray(data.results) &&
-        data.results.length > 0
-    ) {
-        return data.results[0];
-    }
-
-    return null;
-
-} catch (error) {
-
-    console.warn(
-        "RAWG: no se pudo cargar " +
-        gameName,
-        error
-    );
-
-    return null;
-}
-```
-
-}
-
-// ============================================================
-// IMAGEN RAWG
+// BUSCAR IMAGEN RAWG
 // ============================================================
 
 async function getRawgGameImage(gameName) {
 
-```
-const game = await getRawgGame(gameName);
+    try {
 
-if (!game) {
+        const response = await fetch(
+            `${API_URL}/api/games?search=${encodeURIComponent(gameName)}&page_size=1`
+        );
+
+        if (!response.ok) {
+            return null;
+        }
+
+        const data = await response.json();
+
+        if (
+            data.results &&
+            data.results.length > 0
+        ) {
+
+            return data.results[0].background_image || null;
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "No se pudo obtener imagen RAWG:",
+            gameName
+        );
+
+    }
+
     return null;
 }
 
-return game.background_image || null;
-```
-
-}
-
 // ============================================================
-// CARGAR JUEGOS
+// CARGAR TARJETAS
 // ============================================================
 
 async function loadGames() {
 
-```
-if (!gamesGrid) {
-    return;
-}
+    if (!gamesGrid) return;
 
-gamesGrid.innerHTML = "";
+    gamesGrid.innerHTML = "";
 
-games.forEach(function (game) {
+    games.forEach(game => {
 
-    const card =
-        document.createElement("div");
+        const card = document.createElement("div");
 
-    card.className = "game-card";
-    card.dataset.game = game.name;
+        card.className = "game-card";
 
-    card.innerHTML =
-        '<div class="game-image-container">' +
-            '<div class="game-image-loading">🎮</div>' +
-        '</div>' +
-        '<div class="game-info">' +
-            '<strong>' +
-                escapeHTML(game.name) +
-            '</strong>' +
-            '<span>' +
-                escapeHTML(game.genre) +
-            '</span>' +
-        '</div>';
+        card.dataset.game = game.name;
 
-    card.addEventListener(
-        "click",
-        function () {
+        card.innerHTML = `
+            <div class="game-image-container">
+                <div class="game-image-loading">
+                    🎮
+                </div>
+            </div>
+
+            <div class="game-info">
+                <strong>${game.name}</strong>
+                <span>${game.genre}</span>
+            </div>
+        `;
+
+        card.addEventListener("click", () => {
+
             selectGame(game.name);
-        }
-    );
 
-    gamesGrid.appendChild(card);
+        });
 
-    loadGameImage(game, card);
-});
-```
+        gamesGrid.appendChild(card);
+
+        loadGameImage(game, card);
+
+    });
 
 }
 
 // ============================================================
-// CARGAR IMAGEN
+// CARGAR IMAGEN INDIVIDUAL
 // ============================================================
 
 async function loadGameImage(game, card) {
 
-```
-const container =
-    card.querySelector(".game-image-container");
+    const container =
+        card.querySelector(".game-image-container");
 
-if (!container) {
-    return;
-}
+    if (!container) return;
 
-const image =
-    await getRawgGameImage(game.name);
+    const image =
+        await getRawgGameImage(game.name);
 
-if (image) {
+    if (image) {
 
-    const img =
-        document.createElement("img");
+        container.innerHTML = `
+            <img
+                class="game-image"
+                src="${image}"
+                alt="${game.name}"
+                loading="lazy"
+            >
+        `;
 
-    img.className = "game-image";
-    img.src = image;
-    img.alt = game.name;
-    img.loading = "lazy";
+    } else {
 
-    img.onerror = function () {
+        container.innerHTML = `
+            <div class="game-image-loading">
+                🎮
+            </div>
+        `;
 
-        container.innerHTML =
-            '<div class="game-image-loading">🎮</div>';
-    };
-
-    container.innerHTML = "";
-    container.appendChild(img);
-
-} else {
-
-    container.innerHTML =
-        '<div class="game-image-loading">🎮</div>';
-}
-```
+    }
 
 }
 
@@ -554,46 +633,38 @@ if (image) {
 
 function selectGame(gameName) {
 
-```
-if (gameSelect) {
-    gameSelect.value = gameName;
-}
+    if (gameSelect) {
 
-document
-    .querySelectorAll(".game-card")
-    .forEach(function (card) {
+        gameSelect.value = gameName;
+
+    }
+
+    document.querySelectorAll(".game-card").forEach(card => {
 
         card.classList.remove("selected");
 
         if (card.dataset.game === gameName) {
-            card.classList.add("selected");
-        }
-    });
 
-calculateFPS();
-```
+            card.classList.add("selected");
+
+        }
+
+    });
 
 }
 
 // ============================================================
-// FILTRAR JUEGOS
+// BUSCADOR
 // ============================================================
 
 function filterGames() {
 
-```
-if (!gameSearch) {
-    return;
-}
+    if (!gameSearch) return;
 
-const search =
-    gameSearch.value
-        .toLowerCase()
-        .trim();
+    const search =
+        gameSearch.value.toLowerCase().trim();
 
-document
-    .querySelectorAll(".game-card")
-    .forEach(function (card) {
+    document.querySelectorAll(".game-card").forEach(card => {
 
         const name =
             card.dataset.game.toLowerCase();
@@ -602,8 +673,8 @@ document
             name.includes(search)
                 ? ""
                 : "none";
+
     });
-```
 
 }
 
@@ -613,15 +684,14 @@ document
 
 function getSelectedGame() {
 
-```
-if (!gameSelect) {
-    return games[0];
-}
+    const gameName =
+        gameSelect
+            ? gameSelect.value
+            : games[0].name;
 
-return games.find(function (game) {
-    return game.name === gameSelect.value;
-}) || games[0];
-```
+    return games.find(
+        game => game.name === gameName
+    ) || games[0];
 
 }
 
@@ -631,205 +701,225 @@ return games.find(function (game) {
 
 function calculateFPS() {
 
-```
-if (!gameSelect || !cpuSelect || !gpuSelect) {
-    return;
-}
+    if (
+        !gameSelect ||
+        !cpuSelect ||
+        !gpuSelect
+    ) return;
 
-const game = getSelectedGame();
+    const game = getSelectedGame();
 
-const cpu = cpuSelect.value;
-const gpu = gpuSelect.value;
+    const cpu = cpuSelect.value;
 
-const resolutionElement =
-    document.getElementById("resolution");
+    const gpu = gpuSelect.value;
 
-const qualityElement =
-    document.getElementById("quality");
+    const resolution =
+        document.getElementById("resolution")?.value
+        || "1080p";
 
-const resolution =
-    resolutionElement
-        ? resolutionElement.value
-        : "1080p";
+    const quality =
+        document.getElementById("quality")?.value
+        || "high";
 
-const quality =
-    qualityElement
-        ? qualityElement.value
-        : "high";
+    const gpuPowerValue =
+        getGpuPower(gpu);
 
-const gpuValue =
-    gpuPower[gpu] || 50;
+    const cpuPowerValue =
+        getCpuPower(cpu);
 
-const cpuValue =
-    cpuPower[cpu] || 60;
+    let fps =
+        gpuPowerValue * 2.2;
 
-let fps =
-    gpuValue * 2.2;
+    fps *= game.performance;
 
-fps *= game.performance;
-
-const cpuFactor =
-    Math.min(
-        cpuValue / 60,
-        1.30
-    );
-
-fps *= cpuFactor;
-
-if (
-    resolution === "1440p" ||
-    resolution === "2K"
-) {
-    fps *= 0.68;
-}
-
-if (
-    resolution === "2160p" ||
-    resolution === "4K"
-) {
-    fps *= 0.42;
-}
-
-if (quality === "low") {
-    fps *= 1.45;
-}
-
-if (quality === "medium") {
-    fps *= 1.20;
-}
-
-if (quality === "ultra") {
-    fps *= 0.78;
-}
-
-fps = Math.max(
-    5,
-    Math.round(fps)
-);
-
-const onePercent =
-    Math.max(
-        1,
-        Math.round(fps * 0.70)
-    );
-
-let cpuUsage =
-    Math.round(
+    const cpuFactor =
         Math.min(
-            100,
-            45 +
-            (gpuValue /
-            Math.max(cpuValue, 1)) *
-            25
-        )
-    );
+            cpuPowerValue / 60,
+            1.30
+        );
 
-let gpuUsage =
-    Math.round(
-        Math.min(
-            99,
-            70 +
-            gpuValue / 5
-        )
-    );
+    fps *= cpuFactor;
 
-let bottleneck = "GPU";
+    // RESOLUCIÓN
 
-if (
-    cpuValue <
-    gpuValue * 0.65
-) {
+    if (
+        resolution === "1440p" ||
+        resolution === "2K"
+    ) {
 
-    bottleneck = "CPU";
-    cpuUsage = 95;
-    gpuUsage = 75;
-}
+        fps *= 0.68;
 
-let performanceText = "Bajo";
+    }
 
-if (fps >= 144) {
-    performanceText = "Excelente";
-} else if (fps >= 100) {
-    performanceText = "Muy bueno";
-} else if (fps >= 60) {
-    performanceText = "Bueno";
-} else if (fps >= 30) {
-    performanceText = "Jugable";
-}
+    if (
+        resolution === "2160p" ||
+        resolution === "4K"
+    ) {
 
-const fpsNumber =
-    document.getElementById("fpsNumber");
+        fps *= 0.42;
 
-const averageFPS =
-    document.getElementById("averageFPS");
+    }
 
-const onePercentElement =
-    document.getElementById("onePercent");
+    // CALIDAD
 
-const cpuUsageElement =
-    document.getElementById("cpuUsage");
+    if (quality === "low") {
+        fps *= 1.45;
+    }
 
-const gpuUsageElement =
-    document.getElementById("gpuUsage");
+    if (quality === "medium") {
+        fps *= 1.20;
+    }
 
-const performanceBadge =
-    document.getElementById("performanceBadge");
+    if (quality === "high") {
+        fps *= 1.00;
+    }
 
-const bottleneckText =
-    document.getElementById("bottleneckText");
+    if (quality === "ultra") {
+        fps *= 0.78;
+    }
 
-const resultDescription =
-    document.getElementById("resultDescription");
+    fps =
+        Math.max(
+            5,
+            Math.round(fps)
+        );
 
-if (fpsNumber) {
-    fpsNumber.textContent =
-        fps + " FPS";
-}
+    const onePercent =
+        Math.max(
+            1,
+            Math.round(fps * 0.70)
+        );
 
-if (averageFPS) {
-    averageFPS.textContent =
-        fps + " FPS";
-}
+    // USO CPU
 
-if (onePercentElement) {
-    onePercentElement.textContent =
-        onePercent + " FPS";
-}
+    let cpuUsage =
+        Math.round(
+            Math.min(
+                100,
+                45 +
+                (gpuPowerValue /
+                    Math.max(cpuPowerValue, 1)) *
+                25
+            )
+        );
 
-if (cpuUsageElement) {
-    cpuUsageElement.textContent =
-        cpuUsage + "%";
-}
+    // USO GPU
 
-if (gpuUsageElement) {
-    gpuUsageElement.textContent =
-        gpuUsage + "%";
-}
+    let gpuUsage =
+        Math.round(
+            Math.min(
+                99,
+                70 +
+                gpuPowerValue / 5
+            )
+        );
 
-if (performanceBadge) {
-    performanceBadge.textContent =
-        performanceText;
-}
+    // CUELLO DE BOTELLA
 
-if (bottleneckText) {
-    bottleneckText.textContent =
-        bottleneck;
-}
+    let bottleneck = "GPU";
 
-if (resultDescription) {
+    if (
+        cpuPowerValue <
+        gpuPowerValue * 0.65
+    ) {
 
-    resultDescription.textContent =
-        game.name +
-        " • " +
-        cpu +
-        " • " +
-        gpu +
-        " • " +
-        resolution +
-        " • " +
-        quality;
-}
-```
+        bottleneck = "CPU";
+
+        cpuUsage = 95;
+
+        gpuUsage = 75;
+
+    }
+
+    // RENDIMIENTO
+
+    let performanceText = "Bajo";
+
+    if (fps >= 144) {
+
+        performanceText = "Excelente";
+
+    } else if (fps >= 100) {
+
+        performanceText = "Muy bueno";
+
+    } else if (fps >= 60) {
+
+        performanceText = "Bueno";
+
+    } else if (fps >= 30) {
+
+        performanceText = "Jugable";
+
+    }
+
+    // MOSTRAR
+
+    const fpsNumber =
+        document.getElementById("fpsNumber");
+
+    const averageFPS =
+        document.getElementById("averageFPS");
+
+    const onePercentElement =
+        document.getElementById("onePercent");
+
+    const cpuUsageElement =
+        document.getElementById("cpuUsage");
+
+    const gpuUsageElement =
+        document.getElementById("gpuUsage");
+
+    const performanceBadge =
+        document.getElementById("performanceBadge");
+
+    const bottleneckText =
+        document.getElementById("bottleneckText");
+
+    const resultDescription =
+        document.getElementById("resultDescription");
+
+    if (fpsNumber) {
+        fpsNumber.textContent =
+            `${fps} FPS`;
+    }
+
+    if (averageFPS) {
+        averageFPS.textContent =
+            `${fps} FPS`;
+    }
+
+    if (onePercentElement) {
+        onePercentElement.textContent =
+            `${onePercent} FPS`;
+    }
+
+    if (cpuUsageElement) {
+        cpuUsageElement.textContent =
+            `${cpuUsage}%`;
+    }
+
+    if (gpuUsageElement) {
+        gpuUsageElement.textContent =
+            `${gpuUsage}%`;
+    }
+
+    if (performanceBadge) {
+        performanceBadge.textContent =
+            performanceText;
+    }
+
+    if (bottleneckText) {
+        bottleneckText.textContent =
+            bottleneck;
+    }
+
+    if (resultDescription) {
+
+        resultDescription.textContent =
+            `${game.name} • ${cpu} • ${gpu} • ${resolution} • ${quality}`;
+
+    }
 
 }
 
@@ -839,80 +929,76 @@ if (resultDescription) {
 
 function setupComparison() {
 
-```
-const gpu1 =
-    document.getElementById("compareGpu1");
+    const gpu1 =
+        document.getElementById("compareGpu1");
 
-const gpu2 =
-    document.getElementById("compareGpu2");
+    const gpu2 =
+        document.getElementById("compareGpu2");
 
-if (!gpu1 || !gpu2) {
-    return;
-}
+    if (!gpu1 || !gpu2) return;
 
-addOptions(gpu1, gpus);
-addOptions(gpu2, gpus);
+    addOptions(gpu1, gpus);
 
-if (gpus.length > 1) {
-    gpu2.selectedIndex = 1;
-}
+    addOptions(gpu2, gpus);
 
-function compare() {
+    if (gpus.length > 1) {
 
-    const power1 =
-        gpuPower[gpu1.value] || 50;
+        gpu2.selectedIndex = 1;
 
-    const power2 =
-        gpuPower[gpu2.value] || 50;
-
-    const difference =
-        Math.round(
-            ((power1 - power2) /
-            power2) *
-            100
-        );
-
-    const result =
-        document.getElementById(
-            "compareResult"
-        );
-
-    if (!result) {
-        return;
     }
 
-    if (difference > 0) {
+    function compare() {
 
-        result.textContent =
-            gpu1.value +
-            " es aproximadamente un " +
-            Math.abs(difference) +
-            "% más potente que " +
-            gpu2.value +
-            ".";
+        const power1 =
+            getGpuPower(gpu1.value);
 
-    } else if (difference < 0) {
+        const power2 =
+            getGpuPower(gpu2.value);
 
-        result.textContent =
-            gpu2.value +
-            " es aproximadamente un " +
-            Math.abs(difference) +
-            "% más potente que " +
-            gpu1.value +
-            ".";
+        const difference =
+            Math.round(
+                ((power1 - power2) /
+                    power2) *
+                100
+            );
 
-    } else {
+        const result =
+            document.getElementById(
+                "compareResult"
+            );
 
-        result.textContent =
-            "Las dos gráficas tienen un rendimiento estimado similar.";
+        if (!result) return;
+
+        if (difference > 0) {
+
+            result.textContent =
+                `${gpu1.value} es aproximadamente un ${Math.abs(difference)}% más potente que ${gpu2.value}.`;
+
+        } else if (difference < 0) {
+
+            result.textContent =
+                `${gpu2.value} es aproximadamente un ${Math.abs(difference)}% más potente que ${gpu1.value}.`;
+
+        } else {
+
+            result.textContent =
+                "Las dos gráficas tienen un rendimiento estimado similar.";
+
+        }
+
     }
-}
 
-gpu1.addEventListener("change", compare);
-gpu2.addEventListener("change", compare);
+    gpu1.addEventListener(
+        "change",
+        compare
+    );
 
-compare();
-```
+    gpu2.addEventListener(
+        "change",
+        compare
+    );
+
+    compare();
 
 }
 
@@ -922,31 +1008,35 @@ compare();
 
 function updateCounters() {
 
-```
-const gameCount =
-    document.getElementById("gameCount");
+    const gameCount =
+        document.getElementById("gameCount");
 
-const cpuCount =
-    document.getElementById("cpuCount");
+    const cpuCount =
+        document.getElementById("cpuCount");
 
-const gpuCount =
-    document.getElementById("gpuCount");
+    const gpuCount =
+        document.getElementById("gpuCount");
 
-if (gameCount) {
-    gameCount.textContent =
-        games.length;
-}
+    if (gameCount) {
 
-if (cpuCount) {
-    cpuCount.textContent =
-        cpus.length;
-}
+        gameCount.textContent =
+            games.length;
 
-if (gpuCount) {
-    gpuCount.textContent =
-        gpus.length;
-}
-```
+    }
+
+    if (cpuCount) {
+
+        cpuCount.textContent =
+            cpus.length;
+
+    }
+
+    if (gpuCount) {
+
+        gpuCount.textContent =
+            gpus.length;
+
+    }
 
 }
 
@@ -956,37 +1046,29 @@ if (gpuCount) {
 
 async function checkAPI() {
 
-```
-try {
+    try {
 
-    const response =
-        await fetch(
-            API_URL + "/"
+        const response =
+            await fetch(
+                `${API_URL}/api/status`
+            );
+
+        const data =
+            await response.json();
+
+        console.log(
+            "FPSCalculator API:",
+            data
         );
 
-    if (!response.ok) {
-        throw new Error(
-            "HTTP " +
-            response.status
+    } catch (error) {
+
+        console.warn(
+            "API de FPSCalculator no disponible.",
+            error
         );
+
     }
-
-    const data =
-        await response.json();
-
-    console.log(
-        "FPSCalculator API conectada:",
-        data
-    );
-
-} catch (error) {
-
-    console.warn(
-        "API no disponible:",
-        error
-    );
-}
-```
 
 }
 
@@ -995,127 +1077,85 @@ try {
 // ============================================================
 
 document.addEventListener(
-"DOMContentLoaded",
-function () {
+    "DOMContentLoaded",
+    function() {
 
-```
-    console.log(
-        "FPSCalculator iniciado"
-    );
-
-    // Juegos
-    addOptions(
-        gameSelect,
-        games.map(function (game) {
-            return game.name;
-        })
-    );
-
-    // CPUs
-    addOptions(
-        cpuSelect,
-        cpus
-    );
-
-    // GPUs
-    addOptions(
-        gpuSelect,
-        gpus
-    );
-
-    // Tarjetas de juegos
-    loadGames();
-
-    // Contadores
-    updateCounters();
-
-    // Comparador
-    setupComparison();
-
-    // API
-    checkAPI();
-
-    // Buscador
-    if (gameSearch) {
-
-        gameSearch.addEventListener(
-            "input",
-            filterGames
+        addOptions(
+            gameSelect,
+            games.map(
+                game => game.name
+            )
         );
-    }
 
-    // Botón
-    if (calculateButton) {
-
-        calculateButton.addEventListener(
-            "click",
-            calculateFPS
+        addOptions(
+            cpuSelect,
+            cpus
         );
-    }
 
-    // Cambios
-    if (gameSelect) {
-        gameSelect.addEventListener(
-            "change",
-            calculateFPS
+        addOptions(
+            gpuSelect,
+            gpus
         );
-    }
 
-    if (cpuSelect) {
-        cpuSelect.addEventListener(
-            "change",
-            calculateFPS
+        loadGames();
+
+        updateCounters();
+
+        setupComparison();
+
+        checkAPI();
+
+        if (gameSearch) {
+
+            gameSearch.addEventListener(
+                "input",
+                filterGames
+            );
+
+        }
+
+        if (calculateButton) {
+
+            calculateButton.addEventListener(
+                "click",
+                calculateFPS
+            );
+
+        }
+
+        calculateFPS();
+
+        console.log(
+            "================================="
         );
-    }
 
-    if (gpuSelect) {
-        gpuSelect.addEventListener(
-            "change",
-            calculateFPS
+        console.log(
+            "FPSCalculator iniciado"
         );
-    }
 
-    const resolution =
-        document.getElementById("resolution");
-
-    const quality =
-        document.getElementById("quality");
-
-    if (resolution) {
-
-        resolution.addEventListener(
-            "change",
-            calculateFPS
+        console.log(
+            "API:",
+            API_URL
         );
-    }
 
-    if (quality) {
-
-        quality.addEventListener(
-            "change",
-            calculateFPS
+        console.log(
+            "Juegos:",
+            games.length
         );
+
+        console.log(
+            "CPUs:",
+            cpus.length
+        );
+
+        console.log(
+            "GPUs:",
+            gpus.length
+        );
+
+        console.log(
+            "================================="
+        );
+
     }
-
-    // Primera calculadora
-    calculateFPS();
-
-    console.log(
-        "Juegos cargados:",
-        games.length
-    );
-
-    console.log(
-        "Procesadores cargados:",
-        cpus.length
-    );
-
-    console.log(
-        "Gráficas cargadas:",
-        gpus.length
-    );
-
-}
-```
-
 );
