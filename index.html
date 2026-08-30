@@ -29,6 +29,7 @@
 >
 
 <!-- Open Graph -->
+
 <meta
     property="og:title"
     content="FPSCalculator - Calculadora de FPS para PC"
@@ -57,6 +58,7 @@
 >
 
 <!-- Twitter / X -->
+
 <meta
     name="twitter:card"
     content="summary"
@@ -72,7 +74,8 @@
     content="Calcula los FPS aproximados de tu PC en tus juegos favoritos."
 >
 
-<!-- Datos estructurados -->
+<!-- Datos estructurados: WebApplication -->
+
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -88,6 +91,61 @@
 }
 </script>
 
+<!-- Datos estructurados: WebSite -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FPSCalculator",
+    "url": "https://diegerig.github.io/FPSCalculator/",
+    "inLanguage": "es"
+}
+</script>
+
+<!-- Datos estructurados: FAQ -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué son los FPS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los FPS son los fotogramas por segundo que puede generar un ordenador mientras ejecuta un videojuego. Un número mayor de FPS normalmente proporciona una experiencia más fluida."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Más FPS significa mejor rendimiento?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "En general, más FPS proporcionan una imagen más fluida, aunque la experiencia también depende de la frecuencia de actualización del monitor."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿La GPU o la CPU es más importante para los FPS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del videojuego y de la configuración. Algunos juegos dependen más de la tarjeta gráfica y otros pueden estar más limitados por el procesador."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Los FPS de FPSCalculator son exactos?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. FPSCalculator proporciona estimaciones. El rendimiento real puede variar según el hardware, los controladores, las temperaturas, la memoria RAM y la configuración del juego."
+            }
+        }
+    ]
+}
+</script>
+
 <link rel="stylesheet" href="style.css">
 ```
 
@@ -100,15 +158,41 @@
 ```
 <div class="container nav-container">
 
-    <a href="#" class="brand" aria-label="FPSCalculator - Inicio">
-        <span class="brand-icon">⚡</span>
-        <span>FPS<span>Calculator</span></span>
+    <a
+        href="#"
+        class="brand"
+        aria-label="FPSCalculator - Inicio"
+    >
+
+        <span class="brand-icon">
+            ⚡
+        </span>
+
+        <span>
+            FPS<span>Calculator</span>
+        </span>
+
     </a>
 
+
     <nav aria-label="Navegación principal">
-        <a href="#calculator">Calculadora</a>
-        <a href="#games">Juegos</a>
-        <a href="#comparison">Comparador</a>
+
+        <a href="#calculator">
+            Calculadora
+        </a>
+
+        <a href="#games">
+            Juegos
+        </a>
+
+        <a href="#comparison">
+            Comparador
+        </a>
+
+        <a href="#faq">
+            FAQ
+        </a>
+
     </nav>
 
 </div>
@@ -129,44 +213,71 @@
             🎮 PC PERFORMANCE TOOL
         </div>
 
+
         <h1>
+
             Calculadora de
             <span>FPS</span>
             para PC
+
         </h1>
 
+
         <p>
+
             Descubre cuántos FPS puede alcanzar tu PC
             en tus juegos favoritos. Selecciona tu
             procesador, tarjeta gráfica, resolución
             y calidad gráfica para obtener una estimación
             del rendimiento.
+
         </p>
+
 
         <a
             href="#calculator"
             class="primary-button"
         >
+
             🚀 Calcular FPS
+
         </a>
 
     </div>
 
 
+
     <div class="hero-card">
 
         <div class="hero-card-top">
-            <span>FPS ESTIMADOS</span>
-            <span class="live-dot">●</span>
+
+            <span>
+                FPS ESTIMADOS
+            </span>
+
+            <span class="live-dot">
+                ●
+            </span>
+
         </div>
 
-        <strong>144</strong>
 
-        <span>FPS</span>
+        <strong>
+            144
+        </strong>
+
+
+        <span>
+            FPS
+        </span>
+
 
         <div class="fake-bar">
+
             <div></div>
+
         </div>
+
 
         <small>
             Rendimiento estimado
@@ -184,25 +295,61 @@
 ```
 <div class="container stats-grid">
 
-    <div class="stat">
-        <strong id="gameCount">0</strong>
-        <span>Juegos</span>
-    </div>
 
     <div class="stat">
-        <strong id="cpuCount">0</strong>
-        <span>Procesadores</span>
+
+        <strong id="gameCount">
+            0
+        </strong>
+
+        <span>
+            Juegos
+        </span>
+
     </div>
 
-    <div class="stat">
-        <strong id="gpuCount">0</strong>
-        <span>Tarjetas gráficas</span>
-    </div>
+
 
     <div class="stat">
-        <strong>4K</strong>
-        <span>Resolución máxima</span>
+
+        <strong id="cpuCount">
+            0
+        </strong>
+
+        <span>
+            Procesadores
+        </span>
+
     </div>
+
+
+
+    <div class="stat">
+
+        <strong id="gpuCount">
+            0
+        </strong>
+
+        <span>
+            Tarjetas gráficas
+        </span>
+
+    </div>
+
+
+
+    <div class="stat">
+
+        <strong>
+            4K
+        </strong>
+
+        <span>
+            Resolución máxima
+        </span>
+
+    </div>
+
 
 </div>
 ```
@@ -217,24 +364,31 @@
 ```
 <div class="container">
 
+
     <div class="section-heading">
 
-        <span>CALCULADORA FPS</span>
+        <span>
+            CALCULADORA FPS
+        </span>
 
         <h2>
             Calcula los FPS de tu PC
         </h2>
 
         <p>
-            Selecciona tu juego, procesador, tarjeta gráfica,
-            resolución y calidad para obtener una estimación
-            del rendimiento.
+
+            Selecciona tu juego, procesador,
+            tarjeta gráfica, resolución y calidad
+            para obtener una estimación del rendimiento.
+
         </p>
 
     </div>
 
 
+
     <div class="calculator-box">
+
 
         <div class="field">
 
@@ -243,12 +397,15 @@
             </label>
 
             <select id="game">
+
                 <option>
                     Cargando juegos...
                 </option>
+
             </select>
 
         </div>
+
 
 
         <div class="field">
@@ -258,12 +415,15 @@
             </label>
 
             <select id="cpu">
+
                 <option>
                     Cargando procesadores...
                 </option>
+
             </select>
 
         </div>
+
 
 
         <div class="field">
@@ -273,12 +433,15 @@
             </label>
 
             <select id="gpu">
+
                 <option>
                     Cargando gráficas...
                 </option>
+
             </select>
 
         </div>
+
 
 
         <div class="field">
@@ -313,6 +476,7 @@
         </div>
 
 
+
         <div class="field">
 
             <label for="quality">
@@ -345,18 +509,23 @@
         </div>
 
 
+
         <button
             id="calculateButton"
             class="calculate-button"
             type="button"
         >
+
             CALCULAR FPS
+
         </button>
 
     </div>
 
 
+
     <div class="result-box">
+
 
         <div class="result-highlight">
 
@@ -375,39 +544,88 @@
         </div>
 
 
+
         <div class="result-stats">
 
-            <div>
-                <span>FPS promedio</span>
-                <strong id="averageFPS">--</strong>
-            </div>
 
             <div>
-                <span>1% Low</span>
-                <strong id="onePercent">--</strong>
+
+                <span>
+                    FPS promedio
+                </span>
+
+                <strong id="averageFPS">
+                    --
+                </strong>
+
             </div>
 
-            <div>
-                <span>CPU</span>
-                <strong id="cpuUsage">--</strong>
-            </div>
+
 
             <div>
-                <span>GPU</span>
-                <strong id="gpuUsage">--</strong>
+
+                <span>
+                    1% Low
+                </span>
+
+                <strong id="onePercent">
+                    --
+                </strong>
+
             </div>
 
+
+
             <div>
-                <span>Cuello de botella</span>
-                <strong id="bottleneckText">--</strong>
+
+                <span>
+                    CPU
+                </span>
+
+                <strong id="cpuUsage">
+                    --
+                </strong>
+
             </div>
+
+
+
+            <div>
+
+                <span>
+                    GPU
+                </span>
+
+                <strong id="gpuUsage">
+                    --
+                </strong>
+
+            </div>
+
+
+
+            <div>
+
+                <span>
+                    Cuello de botella
+                </span>
+
+                <strong id="bottleneckText">
+                    --
+                </strong>
+
+            </div>
+
 
         </div>
 
 
+
         <p id="resultDescription">
+
             Selecciona tu configuración y calcula
             el rendimiento.
+
         </p>
 
     </div>
@@ -425,20 +643,27 @@
 ```
 <div class="container">
 
+
     <div class="section-heading">
 
-        <span>JUEGOS</span>
+        <span>
+            JUEGOS
+        </span>
 
         <h2>
             Calculadora de FPS por juego
         </h2>
 
         <p>
-            Selecciona un juego para consultar el rendimiento
-            estimado de diferentes configuraciones de PC.
+
+            Selecciona un juego para consultar
+            el rendimiento estimado de diferentes
+            configuraciones de PC.
+
         </p>
 
     </div>
+
 
 
     <div class="search-container">
@@ -460,6 +685,7 @@
     </div>
 
 
+
     <div
         id="gamesGrid"
         class="games-grid"
@@ -478,23 +704,31 @@
 ```
 <div class="container">
 
+
     <div class="section-heading">
 
-        <span>COMPARADOR DE GPU</span>
+        <span>
+            COMPARADOR DE GPU
+        </span>
 
         <h2>
             Compara dos tarjetas gráficas
         </h2>
 
         <p>
-            Compara el rendimiento estimado de dos GPUs
-            para saber cuál puede ofrecer más FPS.
+
+            Compara el rendimiento estimado
+            de dos GPUs para saber cuál puede
+            ofrecer más FPS.
+
         </p>
 
     </div>
 
 
+
     <div class="comparison-box">
+
 
         <div class="field">
 
@@ -507,9 +741,11 @@
         </div>
 
 
+
         <div class="vs">
             VS
         </div>
+
 
 
         <div class="field">
@@ -522,14 +758,18 @@
 
         </div>
 
+
     </div>
+
 
 
     <div
         id="compareResult"
         class="compare-result"
     >
+
         Selecciona dos gráficas para compararlas.
+
     </div>
 
 </div>
@@ -542,24 +782,31 @@
 ```
 <div class="container">
 
+
     <div class="section-heading">
 
-        <span>GUÍA FPS</span>
+        <span>
+            GUÍA FPS
+        </span>
 
         <h2>
             ¿Cómo calcular los FPS de un PC?
         </h2>
 
         <p>
-            Los FPS dependen principalmente de la tarjeta gráfica,
-            el procesador, el juego, la resolución y la calidad
-            gráfica utilizada.
+
+            Los FPS dependen principalmente de la
+            tarjeta gráfica, el procesador, el juego,
+            la resolución y la calidad gráfica utilizada.
+
         </p>
 
     </div>
 
 
+
     <div class="info-grid">
+
 
         <article class="info-card">
 
@@ -572,12 +819,15 @@
             </h3>
 
             <p>
+
                 Selecciona el juego que quieres analizar.
-                Cada videojuego tiene unos requisitos y un
-                rendimiento diferente.
+                Cada videojuego tiene unos requisitos
+                y un rendimiento diferente.
+
             </p>
 
         </article>
+
 
 
         <article class="info-card">
@@ -591,12 +841,15 @@
             </h3>
 
             <p>
-                El procesador y la tarjeta gráfica influyen
-                directamente en el rendimiento que puedes
-                conseguir en tus juegos.
+
+                El procesador y la tarjeta gráfica
+                influyen directamente en el rendimiento
+                que puedes conseguir en tus juegos.
+
             </p>
 
         </article>
+
 
 
         <article class="info-card">
@@ -610,11 +863,14 @@
             </h3>
 
             <p>
-                Puedes calcular el rendimiento en 720p,
-                1080p, 1440p y 4K.
+
+                Puedes calcular el rendimiento
+                en 720p, 1080p, 1440p y 4K.
+
             </p>
 
         </article>
+
 
 
         <article class="info-card">
@@ -628,11 +884,15 @@
             </h3>
 
             <p>
-                Selecciona calidad baja, media, alta o ultra
-                para obtener una estimación diferente.
+
+                Selecciona calidad baja, media,
+                alta o ultra para obtener una
+                estimación diferente.
+
             </p>
 
         </article>
+
 
 
         <article class="info-card">
@@ -646,11 +906,15 @@
             </h3>
 
             <p>
-                La calculadora muestra una estimación de FPS
-                promedio, 1% Low y otros datos de rendimiento.
+
+                La calculadora muestra una estimación
+                de FPS promedio, 1% Low y otros datos
+                de rendimiento.
+
             </p>
 
         </article>
+
 
 
         <article class="info-card">
@@ -664,11 +928,15 @@
             </h3>
 
             <p>
-                Consulta una estimación del uso de CPU y GPU
-                y del posible cuello de botella del sistema.
+
+                Consulta una estimación del uso de CPU
+                y GPU y del posible cuello de botella
+                del sistema.
+
             </p>
 
         </article>
+
 
     </div>
 
@@ -682,48 +950,210 @@
 ```
 <div class="container">
 
+
     <div class="section-heading">
 
-        <span>RENDIMIENTO DE PC</span>
+        <span>
+            RENDIMIENTO DE PC
+        </span>
 
         <h2>
             Calculadora de FPS online
         </h2>
 
         <p>
-            FPSCalculator es una herramienta online para estimar
-            el rendimiento de un ordenador en videojuegos.
+
+            FPSCalculator es una herramienta online
+            para estimar el rendimiento de un ordenador
+            en videojuegos.
+
         </p>
 
     </div>
 
+
+
     <div class="text-content">
 
-        <p>
-            Con FPSCalculator puedes estimar cuántos FPS puede
-            conseguir tu PC seleccionando diferentes procesadores,
-            tarjetas gráficas, juegos, resoluciones y niveles de
-            calidad gráfica.
-        </p>
 
         <p>
-            La herramienta está pensada para ayudarte a conocer
-            de forma rápida el rendimiento aproximado de una
-            configuración antes de jugar o actualizar el hardware.
+
+            Con FPSCalculator puedes estimar cuántos FPS
+            puede conseguir tu PC seleccionando diferentes
+            procesadores, tarjetas gráficas, juegos,
+            resoluciones y niveles de calidad gráfica.
+
         </p>
 
-        <p>
-            Puedes utilizar diferentes resoluciones, desde 720p
-            hasta 4K, y comparar tarjetas gráficas para encontrar
-            la configuración que mejor se adapte a tus necesidades.
-        </p>
+
 
         <p>
-            Las cifras mostradas por FPSCalculator son estimaciones.
-            El rendimiento real puede variar dependiendo de los
-            controladores, temperaturas, memoria RAM, configuración
-            del juego, procesos en segundo plano y otros factores.
+
+            La herramienta está pensada para ayudarte
+            a conocer de forma rápida el rendimiento
+            aproximado de una configuración antes de
+            jugar o actualizar el hardware.
+
         </p>
+
+
+
+        <p>
+
+            Puedes utilizar diferentes resoluciones,
+            desde 720p hasta 4K, y comparar tarjetas
+            gráficas para encontrar la configuración
+            que mejor se adapte a tus necesidades.
+
+        </p>
+
+
+
+        <p>
+
+            Las cifras mostradas por FPSCalculator
+            son estimaciones. El rendimiento real puede
+            variar dependiendo de los controladores,
+            temperaturas, memoria RAM, configuración
+            del juego, procesos en segundo plano
+            y otros factores.
+
+        </p>
+
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section
+    id="faq"
+    class="section faq-section"
+>
+
+```
+<div class="container">
+
+
+    <div class="section-heading">
+
+        <span>
+            PREGUNTAS FRECUENTES
+        </span>
+
+        <h2>
+            Preguntas frecuentes sobre FPS
+        </h2>
+
+        <p>
+
+            Respuestas a las preguntas más habituales
+            sobre el rendimiento de un PC en videojuegos.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="faq">
+
+
+        <details>
+
+            <summary>
+                ¿Qué son los FPS?
+            </summary>
+
+            <p>
+
+                Los FPS son los fotogramas por segundo
+                que puede generar un ordenador mientras
+                ejecuta un videojuego. Un número mayor
+                de FPS normalmente proporciona una
+                experiencia más fluida.
+
+            </p>
+
+        </details>
+
+
+
+        <details>
+
+            <summary>
+                ¿Más FPS significa mejor rendimiento?
+            </summary>
+
+            <p>
+
+                En general, más FPS proporcionan una
+                imagen más fluida, aunque la experiencia
+                también depende de la frecuencia de
+                actualización del monitor.
+
+            </p>
+
+        </details>
+
+
+
+        <details>
+
+            <summary>
+                ¿La GPU o la CPU es más importante para los FPS?
+            </summary>
+
+            <p>
+
+                Depende del videojuego y de la configuración.
+                Algunos juegos dependen más de la tarjeta
+                gráfica y otros pueden estar más limitados
+                por el procesador.
+
+            </p>
+
+        </details>
+
+
+
+        <details>
+
+            <summary>
+                ¿Qué resolución permite conseguir más FPS?
+            </summary>
+
+            <p>
+
+                Normalmente, una resolución menor requiere
+                menos trabajo para la tarjeta gráfica y
+                puede permitir conseguir más FPS.
+
+            </p>
+
+        </details>
+
+
+
+        <details>
+
+            <summary>
+                ¿Los FPS de FPSCalculator son exactos?
+            </summary>
+
+            <p>
+
+                No. FPSCalculator proporciona estimaciones.
+                El rendimiento real puede variar según el
+                hardware, los controladores, las temperaturas,
+                la memoria RAM y la configuración del juego.
+
+            </p>
+
+        </details>
+
 
     </div>
 
@@ -739,6 +1169,7 @@
 ```
 <div class="container footer-container">
 
+
     <div>
 
         <div class="footer-brand">
@@ -750,6 +1181,7 @@
         </p>
 
     </div>
+
 
 
     <div class="footer-links">
@@ -773,16 +1205,20 @@
     </div>
 
 
+
     <div class="copyright">
 
         © 2026 FPSCalculator
 
         <small>
-            Las cifras de FPS son estimaciones y pueden variar
-            dependiendo del hardware y la configuración.
+
+            Las cifras de FPS son estimaciones y pueden
+            variar dependiendo del hardware y la configuración.
+
         </small>
 
     </div>
+
 
 </div>
 ```
