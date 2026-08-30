@@ -1,7 +1,6 @@
 ```javascript
 // ============================================================
-// FPSCALCULATOR - SCRIPT DEFINITIVO
-// RAWG + CALCULADORA FPS + COMPARADOR
+// FPSCALCULATOR - SCRIPT COMPLETO
 // ============================================================
 
 const API_URL = "https://fpscalculator-api.onrender.com";
@@ -143,7 +142,6 @@ const cpus = [
     "AMD Ryzen 5 5600",
     "AMD Ryzen 5 5600G",
     "AMD Ryzen 5 5600X",
-    "AMD Ryzen 7 5700G",
     "AMD Ryzen 5 7600",
     "AMD Ryzen 5 7600X",
     "AMD Ryzen 5 8400F",
@@ -316,7 +314,6 @@ const gpus = [
 // ============================================================
 
 const gpuPower = {
-
     "NVIDIA GTX 750": 12,
     "NVIDIA GTX 750 Ti": 15,
     "NVIDIA GTX 760": 20,
@@ -443,165 +440,32 @@ const gpuPower = {
     "Intel Arc B580": 100
 };
 
-
 // ============================================================
 // POTENCIA CPU
 // ============================================================
 
-const cpuPower = {
+const cpuPower = {};
 
-    "Intel Core i3-8100": 35,
-    "Intel Core i3-9100F": 38,
-    "Intel Core i3-10100": 45,
-    "Intel Core i3-10100F": 45,
-    "Intel Core i3-12100": 60,
-    "Intel Core i3-12100F": 60,
-    "Intel Core i3-13100": 63,
-    "Intel Core i3-13100F": 63,
-    "Intel Core i3-14100": 65,
-    "Intel Core i3-14100F": 65,
+cpus.forEach((cpu, index) => {
+    let power = 40 + index * 0.65;
 
-    "Intel Core i5-8400": 50,
-    "Intel Core i5-8500": 53,
-    "Intel Core i5-8600K": 57,
-    "Intel Core i5-9400F": 53,
-    "Intel Core i5-9600K": 60,
-    "Intel Core i5-10400": 60,
-    "Intel Core i5-10400F": 60,
-    "Intel Core i5-10600K": 70,
-    "Intel Core i5-11400": 68,
-    "Intel Core i5-11400F": 68,
-    "Intel Core i5-11600K": 75,
-    "Intel Core i5-12400": 78,
-    "Intel Core i5-12400F": 78,
-    "Intel Core i5-12600K": 90,
-    "Intel Core i5-13400": 88,
-    "Intel Core i5-13400F": 88,
-    "Intel Core i5-13600K": 105,
-    "Intel Core i5-14400": 92,
-    "Intel Core i5-14400F": 92,
-    "Intel Core i5-14600K": 108,
+    if (cpu.includes("i3")) power += 0;
+    if (cpu.includes("i5")) power += 8;
+    if (cpu.includes("i7")) power += 16;
+    if (cpu.includes("i9")) power += 24;
 
-    "Intel Core i7-8700": 70,
-    "Intel Core i7-8700K": 75,
-    "Intel Core i7-9700K": 76,
-    "Intel Core i7-10700": 80,
-    "Intel Core i7-10700K": 85,
-    "Intel Core i7-11700": 84,
-    "Intel Core i7-11700K": 90,
-    "Intel Core i7-12700": 100,
-    "Intel Core i7-12700K": 108,
-    "Intel Core i7-13700": 115,
-    "Intel Core i7-13700K": 120,
-    "Intel Core i7-14700": 125,
-    "Intel Core i7-14700K": 130,
-
-    "Intel Core i9-9900K": 88,
-    "Intel Core i9-10900K": 100,
-    "Intel Core i9-11900K": 98,
-    "Intel Core i9-12900K": 120,
-    "Intel Core i9-13900K": 140,
-    "Intel Core i9-14900K": 145,
-
-    "AMD Ryzen 3 1200": 32,
-    "AMD Ryzen 3 2200G": 38,
-    "AMD Ryzen 3 3100": 48,
-    "AMD Ryzen 3 3300X": 53,
-    "AMD Ryzen 3 4100": 45,
-    "AMD Ryzen 3 4300G": 48,
-    "AMD Ryzen 3 5300G": 55,
-
-    "AMD Ryzen 5 1600": 52,
-    "AMD Ryzen 5 1600 AF": 55,
-    "AMD Ryzen 5 2600": 58,
-    "AMD Ryzen 5 2600X": 62,
-    "AMD Ryzen 5 3600": 68,
-    "AMD Ryzen 5 3600X": 72,
-    "AMD Ryzen 5 4500": 58,
-    "AMD Ryzen 5 4600G": 62,
-    "AMD Ryzen 5 5500": 68,
-    "AMD Ryzen 5 5500GT": 70,
-    "AMD Ryzen 5 5600": 76,
-    "AMD Ryzen 5 5600G": 72,
-    "AMD Ryzen 5 5600X": 80,
-    "AMD Ryzen 7 5700G": 78,
-    "AMD Ryzen 5 7600": 92,
-    "AMD Ryzen 5 7600X": 96,
-    "AMD Ryzen 5 8400F": 90,
-    "AMD Ryzen 5 8500G": 88,
-    "AMD Ryzen 5 8600G": 92,
-    "AMD Ryzen 5 9600X": 105,
-
-    "AMD Ryzen 7 1700": 65,
-    "AMD Ryzen 7 2700": 70,
-    "AMD Ryzen 7 2700X": 75,
-    "AMD Ryzen 7 3700X": 78,
-    "AMD Ryzen 7 3800X": 83,
-    "AMD Ryzen 7 5700X": 88,
-    "AMD Ryzen 7 5700G": 82,
-    "AMD Ryzen 7 5800X": 92,
-    "AMD Ryzen 7 5800X3D": 105,
-    "AMD Ryzen 7 7700": 105,
-    "AMD Ryzen 7 7700X": 110,
-    "AMD Ryzen 7 7800X3D": 125,
-    "AMD Ryzen 7 8700G": 108,
-    "AMD Ryzen 7 9700X": 120,
-    "AMD Ryzen 7 9800X3D": 135,
-
-    "AMD Ryzen 9 3900X": 95,
-    "AMD Ryzen 9 3950X": 100,
-    "AMD Ryzen 9 5900X": 108,
-    "AMD Ryzen 9 5950X": 115,
-    "AMD Ryzen 9 7900": 120,
-    "AMD Ryzen 9 7900X": 128,
-    "AMD Ryzen 9 7950X": 140,
-    "AMD Ryzen 9 7950X3D": 145,
-    "AMD Ryzen 9 9900X": 140,
-    "AMD Ryzen 9 9950X": 155,
-    "AMD Ryzen 9 9950X3D": 165
-};
-
-
-// ============================================================
-// OBTENER POTENCIA GPU
-// ============================================================
-
-function getGpuPower(gpu) {
-    return gpuPower[gpu] || 50;
-}
-
-
-// ============================================================
-// OBTENER POTENCIA CPU
-// ============================================================
-
-function getCpuPower(cpu) {
-
-    if (cpuPower[cpu]) {
-        return cpuPower[cpu];
-    }
-
-    let power = 50;
-
-    if (cpu.includes("i3")) power = 45;
-    if (cpu.includes("i5")) power = 65;
-    if (cpu.includes("i7")) power = 80;
-    if (cpu.includes("i9")) power = 95;
-
-    if (cpu.includes("Ryzen 3")) power = 45;
-    if (cpu.includes("Ryzen 5")) power = 65;
-    if (cpu.includes("Ryzen 7")) power = 80;
-    if (cpu.includes("Ryzen 9")) power = 95;
+    if (cpu.includes("Ryzen 3")) power += 0;
+    if (cpu.includes("Ryzen 5")) power += 8;
+    if (cpu.includes("Ryzen 7")) power += 16;
+    if (cpu.includes("Ryzen 9")) power += 24;
 
     if (cpu.includes("X3D")) power += 10;
-    if (cpu.includes("G")) power -= 5;
 
-    return power;
-}
-
+    cpuPower[cpu] = Math.min(165, Math.round(power));
+});
 
 // ============================================================
-// ELEMENTOS DEL HTML
+// ELEMENTOS
 // ============================================================
 
 const gameSelect = document.getElementById("game");
@@ -612,35 +476,28 @@ const gamesGrid = document.getElementById("gamesGrid");
 const gameSearch = document.getElementById("gameSearch");
 const calculateButton = document.getElementById("calculateButton");
 
-
 // ============================================================
-// AÑADIR OPCIONES A SELECT
+// OPCIONES
 // ============================================================
 
 function addOptions(select, items) {
-
     if (!select) return;
 
     select.innerHTML = "";
 
     items.forEach(item => {
-
         const option = document.createElement("option");
-
         option.value = item;
         option.textContent = item;
-
         select.appendChild(option);
     });
 }
-
 
 // ============================================================
 // ESCAPAR HTML
 // ============================================================
 
 function escapeHTML(value) {
-
     return String(value)
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
@@ -649,21 +506,22 @@ function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
-
 // ============================================================
-// RAWG - BUSCAR JUEGO
+// RAWG
 // ============================================================
 
 async function getRawgGame(gameName) {
-
     try {
+        const url =
+            API_URL +
+            "/api/games?search=" +
+            encodeURIComponent(gameName) +
+            "&page_size=1";
 
-        const response = await fetch(
-            `${API_URL}/api/games?search=${encodeURIComponent(gameName)}&page_size=1`
-        );
+        const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
+            throw new Error("HTTP " + response.status);
         }
 
         const data = await response.json();
@@ -679,9 +537,8 @@ async function getRawgGame(gameName) {
         return null;
 
     } catch (error) {
-
         console.warn(
-            `RAWG: no se pudo cargar ${gameName}`,
+            "RAWG no pudo cargar " + gameName,
             error
         );
 
@@ -689,13 +546,11 @@ async function getRawgGame(gameName) {
     }
 }
 
-
 // ============================================================
-// RAWG - OBTENER IMAGEN
+// IMAGEN RAWG
 // ============================================================
 
 async function getRawgGameImage(gameName) {
-
     const game = await getRawgGame(gameName);
 
     if (!game) {
@@ -705,44 +560,35 @@ async function getRawgGameImage(gameName) {
     return game.background_image || null;
 }
 
-
 // ============================================================
-// CARGAR TARJETAS DE JUEGOS
+// TARJETAS
 // ============================================================
 
 async function loadGames() {
-
     if (!gamesGrid) {
-        console.warn("No existe #gamesGrid en el HTML.");
+        console.warn("No existe #gamesGrid");
         return;
     }
 
     gamesGrid.innerHTML = "";
 
     games.forEach(game => {
-
         const card = document.createElement("div");
 
         card.className = "game-card";
         card.dataset.game = game.name;
 
-        card.innerHTML = `
-            <div class="game-image-container">
-                <div class="game-image-loading">
-                    🎮
-                </div>
-            </div>
+        card.innerHTML =
+            '<div class="game-image-container">' +
+                '<div class="game-image-loading">🎮</div>' +
+            '</div>' +
+            '<div class="game-info">' +
+                "<strong>" + escapeHTML(game.name) + "</strong>" +
+                "<span>" + escapeHTML(game.genre) + "</span>" +
+            "</div>";
 
-            <div class="game-info">
-                <strong>${escapeHTML(game.name)}</strong>
-                <span>${escapeHTML(game.genre)}</span>
-            </div>
-        `;
-
-        card.addEventListener("click", () => {
-
+        card.addEventListener("click", function() {
             selectGame(game.name);
-
         });
 
         gamesGrid.appendChild(card);
@@ -751,60 +597,45 @@ async function loadGames() {
     });
 }
 
-
 // ============================================================
-// CARGAR IMAGEN DE UNA TARJETA
+// IMAGEN DE TARJETA
 // ============================================================
 
 async function loadGameImage(game, card) {
-
     const container =
         card.querySelector(".game-image-container");
 
     if (!container) return;
 
-    const image =
-        await getRawgGameImage(game.name);
+    const image = await getRawgGameImage(game.name);
 
     if (image) {
-
-        const img =
-            document.createElement("img");
+        const img = document.createElement("img");
 
         img.className = "game-image";
         img.src = image;
         img.alt = game.name;
         img.loading = "lazy";
 
-        img.onerror = function () {
-
-            container.innerHTML = `
-                <div class="game-image-loading">
-                    🎮
-                </div>
-            `;
+        img.onerror = function() {
+            container.innerHTML =
+                '<div class="game-image-loading">🎮</div>';
         };
 
         container.innerHTML = "";
         container.appendChild(img);
 
     } else {
-
-        container.innerHTML = `
-            <div class="game-image-loading">
-                🎮
-            </div>
-        `;
+        container.innerHTML =
+            '<div class="game-image-loading">🎮</div>';
     }
 }
-
 
 // ============================================================
 // SELECCIONAR JUEGO
 // ============================================================
 
 function selectGame(gameName) {
-
     if (gameSelect) {
         gameSelect.value = gameName;
     }
@@ -812,7 +643,6 @@ function selectGame(gameName) {
     document
         .querySelectorAll(".game-card")
         .forEach(card => {
-
             card.classList.remove("selected");
 
             if (card.dataset.game === gameName) {
@@ -823,98 +653,90 @@ function selectGame(gameName) {
     calculateFPS();
 }
 
-
 // ============================================================
-// BUSCADOR DE JUEGOS
+// BUSCADOR
 // ============================================================
 
 function filterGames() {
-
     if (!gameSearch) return;
 
     const search =
-        gameSearch.value
-            .toLowerCase()
-            .trim();
+        gameSearch.value.toLowerCase().trim();
 
     document
         .querySelectorAll(".game-card")
         .forEach(card => {
-
             const name =
-                card.dataset.game
-                    .toLowerCase();
+                card.dataset.game.toLowerCase();
 
             card.style.display =
-                name.includes(search)
-                    ? ""
-                    : "none";
+                name.includes(search) ? "" : "none";
         });
 }
 
-
 // ============================================================
-// OBTENER JUEGO SELECCIONADO
+// JUEGO SELECCIONADO
 // ============================================================
 
 function getSelectedGame() {
-
     const gameName =
-        gameSelect
+        gameSelect && gameSelect.value
             ? gameSelect.value
             : games[0].name;
 
-    return games.find(
-        game => game.name === gameName
-    ) || games[0];
+    return (
+        games.find(game => game.name === gameName) ||
+        games[0]
+    );
 }
 
+// ============================================================
+// POTENCIA
+// ============================================================
+
+function getGpuPower(gpu) {
+    return gpuPower[gpu] || 50;
+}
+
+function getCpuPower(cpu) {
+    return cpuPower[cpu] || 50;
+}
 
 // ============================================================
-// CALCULADORA FPS
+// CALCULADORA
 // ============================================================
 
 function calculateFPS() {
-
-    if (
-        !gameSelect ||
-        !cpuSelect ||
-        !gpuSelect
-    ) {
+    if (!gameSelect || !cpuSelect || !gpuSelect) {
         return;
     }
 
     const game = getSelectedGame();
-
     const cpu = cpuSelect.value;
     const gpu = gpuSelect.value;
 
+    const resolutionElement =
+        document.getElementById("resolution");
+
+    const qualityElement =
+        document.getElementById("quality");
+
     const resolution =
-        document.getElementById("resolution")?.value
-        || "1080p";
+        resolutionElement
+            ? resolutionElement.value
+            : "1080p";
 
     const quality =
-        document.getElementById("quality")?.value
-        || "high";
+        qualityElement
+            ? qualityElement.value
+            : "high";
 
-    const gpuPowerValue =
-        getGpuPower(gpu);
+    const gpuPowerValue = getGpuPower(gpu);
+    const cpuPowerValue = getCpuPower(cpu);
 
-    const cpuPowerValue =
-        getCpuPower(cpu);
-
-    // --------------------------------------------------------
-    // FPS BASE
-    // --------------------------------------------------------
-
-    let fps =
-        gpuPowerValue * 2.2;
+    let fps = gpuPowerValue * 2.2;
 
     fps *= game.performance;
-
-    // --------------------------------------------------------
-    // INFLUENCIA CPU
-    // --------------------------------------------------------
 
     const cpuFactor =
         Math.min(
@@ -924,27 +746,13 @@ function calculateFPS() {
 
     fps *= cpuFactor;
 
-    // --------------------------------------------------------
-    // RESOLUCIÓN
-    // --------------------------------------------------------
-
-    if (
-        resolution === "1440p" ||
-        resolution === "2K"
-    ) {
+    if (resolution === "1440p") {
         fps *= 0.68;
     }
 
-    if (
-        resolution === "2160p" ||
-        resolution === "4K"
-    ) {
+    if (resolution === "2160p") {
         fps *= 0.42;
     }
-
-    // --------------------------------------------------------
-    // CALIDAD
-    // --------------------------------------------------------
 
     if (quality === "low") {
         fps *= 1.45;
@@ -954,32 +762,17 @@ function calculateFPS() {
         fps *= 1.20;
     }
 
-    if (quality === "high") {
-        fps *= 1.00;
-    }
-
     if (quality === "ultra") {
         fps *= 0.78;
     }
 
-    // --------------------------------------------------------
-    // FPS FINAL
-    // --------------------------------------------------------
-
-    fps = Math.max(
-        5,
-        Math.round(fps)
-    );
+    fps = Math.max(5, Math.round(fps));
 
     const onePercent =
         Math.max(
             1,
             Math.round(fps * 0.70)
         );
-
-    // --------------------------------------------------------
-    // USO CPU
-    // --------------------------------------------------------
 
     let cpuUsage =
         Math.round(
@@ -992,10 +785,6 @@ function calculateFPS() {
             )
         );
 
-    // --------------------------------------------------------
-    // USO GPU
-    // --------------------------------------------------------
-
     let gpuUsage =
         Math.round(
             Math.min(
@@ -1005,49 +794,25 @@ function calculateFPS() {
             )
         );
 
-    // --------------------------------------------------------
-    // CUELLO DE BOTELLA
-    // --------------------------------------------------------
-
     let bottleneck = "GPU";
 
-    if (
-        cpuPowerValue <
-        gpuPowerValue * 0.65
-    ) {
-
+    if (cpuPowerValue < gpuPowerValue * 0.65) {
         bottleneck = "CPU";
-
         cpuUsage = 95;
         gpuUsage = 75;
     }
 
-    // --------------------------------------------------------
-    // NIVEL DE RENDIMIENTO
-    // --------------------------------------------------------
-
     let performanceText = "Bajo";
 
     if (fps >= 144) {
-
         performanceText = "Excelente";
-
     } else if (fps >= 100) {
-
         performanceText = "Muy bueno";
-
     } else if (fps >= 60) {
-
         performanceText = "Bueno";
-
     } else if (fps >= 30) {
-
         performanceText = "Jugable";
     }
-
-    // --------------------------------------------------------
-    // MOSTRAR RESULTADOS
-    // --------------------------------------------------------
 
     const fpsNumber =
         document.getElementById("fpsNumber");
@@ -1074,28 +839,26 @@ function calculateFPS() {
         document.getElementById("resultDescription");
 
     if (fpsNumber) {
-        fpsNumber.textContent =
-            `${fps} FPS`;
+        fpsNumber.textContent = fps + " FPS";
     }
 
     if (averageFPS) {
-        averageFPS.textContent =
-            `${fps} FPS`;
+        averageFPS.textContent = fps + " FPS";
     }
 
     if (onePercentElement) {
         onePercentElement.textContent =
-            `${onePercent} FPS`;
+            onePercent + " FPS";
     }
 
     if (cpuUsageElement) {
         cpuUsageElement.textContent =
-            `${cpuUsage}%`;
+            cpuUsage + "%";
     }
 
     if (gpuUsageElement) {
         gpuUsageElement.textContent =
-            `${gpuUsage}%`;
+            gpuUsage + "%";
     }
 
     if (performanceBadge) {
@@ -1109,50 +872,47 @@ function calculateFPS() {
     }
 
     if (resultDescription) {
-
         resultDescription.textContent =
-            `${game.name} • ${cpu} • ${gpu} • ${resolution} • ${quality}`;
+            game.name +
+            " • " +
+            cpu +
+            " • " +
+            gpu +
+            " • " +
+            resolution +
+            " • " +
+            quality;
     }
 }
 
-
 // ============================================================
-// COMPARADOR DE GPU
+// COMPARADOR
 // ============================================================
 
 function setupComparison() {
-
     const gpu1 =
         document.getElementById("compareGpu1");
 
     const gpu2 =
         document.getElementById("compareGpu2");
 
-    if (!gpu1 || !gpu2) {
+    const result =
+        document.getElementById("compareResult");
+
+    if (!gpu1 || !gpu2 || !result) {
         return;
     }
 
-    addOptions(
-        gpu1,
-        gpus
-    );
-
-    addOptions(
-        gpu2,
-        gpus
-    );
+    addOptions(gpu1, gpus);
+    addOptions(gpu2, gpus);
 
     if (gpus.length > 1) {
         gpu2.selectedIndex = 1;
     }
 
     function compare() {
-
-        const power1 =
-            getGpuPower(gpu1.value);
-
-        const power2 =
-            getGpuPower(gpu2.value);
+        const power1 = getGpuPower(gpu1.value);
+        const power2 = getGpuPower(gpu2.value);
 
         if (power2 <= 0) {
             return;
@@ -1160,57 +920,42 @@ function setupComparison() {
 
         const difference =
             Math.round(
-                ((power1 - power2) /
-                    power2) *
-                100
+                ((power1 - power2) / power2) * 100
             );
-
-        const result =
-            document.getElementById(
-                "compareResult"
-            );
-
-        if (!result) {
-            return;
-        }
 
         if (difference > 0) {
-
             result.textContent =
-                `${gpu1.value} es aproximadamente un ${Math.abs(difference)}% más potente que ${gpu2.value}.`;
-
+                gpu1.value +
+                " es aproximadamente un " +
+                Math.abs(difference) +
+                "% más potente que " +
+                gpu2.value +
+                ".";
         } else if (difference < 0) {
-
             result.textContent =
-                `${gpu2.value} es aproximadamente un ${Math.abs(difference)}% más potente que ${gpu1.value}.`;
-
+                gpu2.value +
+                " es aproximadamente un " +
+                Math.abs(difference) +
+                "% más potente que " +
+                gpu1.value +
+                ".";
         } else {
-
             result.textContent =
                 "Las dos gráficas tienen un rendimiento estimado similar.";
         }
     }
 
-    gpu1.addEventListener(
-        "change",
-        compare
-    );
-
-    gpu2.addEventListener(
-        "change",
-        compare
-    );
+    gpu1.addEventListener("change", compare);
+    gpu2.addEventListener("change", compare);
 
     compare();
 }
-
 
 // ============================================================
 // CONTADORES
 // ============================================================
 
 function updateCounters() {
-
     const gameCount =
         document.getElementById("gameCount");
 
@@ -1221,83 +966,50 @@ function updateCounters() {
         document.getElementById("gpuCount");
 
     if (gameCount) {
-
-        gameCount.textContent =
-            games.length;
+        gameCount.textContent = games.length;
     }
 
     if (cpuCount) {
-
-        cpuCount.textContent =
-            cpus.length;
+        cpuCount.textContent = cpus.length;
     }
 
     if (gpuCount) {
-
-        gpuCount.textContent =
-            gpus.length;
+        gpuCount.textContent = gpus.length;
     }
 }
-
 
 // ============================================================
 // COMPROBAR API
 // ============================================================
 
 async function checkAPI() {
-
     try {
-
         const response =
-            await fetch(
-                `${API_URL}/api/status`
-            );
+            await fetch(API_URL + "/api/status");
 
         if (!response.ok) {
-
             throw new Error(
-                `HTTP ${response.status}`
+                "HTTP " + response.status
             );
         }
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
-        console.log(
-            "================================="
-        );
-
-        console.log(
-            "FPSCalculator API:",
-            data
-        );
+        console.log("FPSCalculator API:", data);
 
         if (data.rawg_configured) {
-
-            console.log(
-                "RAWG: conectado correctamente"
-            );
-
+            console.log("RAWG conectado correctamente");
         } else {
-
-            console.warn(
-                "RAWG: falta RAWG_API_KEY en Render"
-            );
+            console.warn("RAWG_API_KEY no configurada");
         }
 
-        console.log(
-            "================================="
-        );
-
     } catch (error) {
-
-        console.error(
-            "No se pudo conectar con la API:",
+        console.warn(
+            "API no disponible:",
             error
         );
     }
 }
-
 
 // ============================================================
 // INICIO
@@ -1305,104 +1017,48 @@ async function checkAPI() {
 
 document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    function() {
 
-        console.log(
-            "================================="
-        );
-
-        console.log(
-            "FPSCalculator iniciado"
-        );
-
-        console.log(
-            "API:",
-            API_URL
-        );
-
-        // ----------------------------------------------------
-        // SELECT DE JUEGOS
-        // ----------------------------------------------------
+        console.log("FPSCalculator iniciado");
 
         addOptions(
             gameSelect,
-            games.map(
-                game => game.name
-            )
+            games.map(game => game.name)
         );
-
-        // ----------------------------------------------------
-        // SELECT DE CPU
-        // ----------------------------------------------------
 
         addOptions(
             cpuSelect,
             cpus
         );
 
-        // ----------------------------------------------------
-        // SELECT DE GPU
-        // ----------------------------------------------------
-
         addOptions(
             gpuSelect,
             gpus
         );
 
-        // ----------------------------------------------------
-        // CARGAR JUEGOS
-        // ----------------------------------------------------
-
         loadGames();
-
-        // ----------------------------------------------------
-        // CONTADORES
-        // ----------------------------------------------------
 
         updateCounters();
 
-        // ----------------------------------------------------
-        // COMPARADOR
-        // ----------------------------------------------------
-
         setupComparison();
-
-        // ----------------------------------------------------
-        // API
-        // ----------------------------------------------------
 
         checkAPI();
 
-        // ----------------------------------------------------
-        // BUSCADOR
-        // ----------------------------------------------------
-
         if (gameSearch) {
-
             gameSearch.addEventListener(
                 "input",
                 filterGames
             );
         }
 
-        // ----------------------------------------------------
-        // BOTÓN CALCULAR
-        // ----------------------------------------------------
-
         if (calculateButton) {
-
             calculateButton.addEventListener(
                 "click",
                 calculateFPS
             );
         }
 
-        // ----------------------------------------------------
-        // CAMBIOS AUTOMÁTICOS
-        // ----------------------------------------------------
-
         if (gameSelect) {
-
             gameSelect.addEventListener(
                 "change",
                 calculateFPS
@@ -1410,7 +1066,6 @@ document.addEventListener(
         }
 
         if (cpuSelect) {
-
             cpuSelect.addEventListener(
                 "change",
                 calculateFPS
@@ -1418,7 +1073,6 @@ document.addEventListener(
         }
 
         if (gpuSelect) {
-
             gpuSelect.addEventListener(
                 "change",
                 calculateFPS
@@ -1432,7 +1086,6 @@ document.addEventListener(
             document.getElementById("quality");
 
         if (resolution) {
-
             resolution.addEventListener(
                 "change",
                 calculateFPS
@@ -1440,22 +1093,13 @@ document.addEventListener(
         }
 
         if (quality) {
-
             quality.addEventListener(
                 "change",
                 calculateFPS
             );
         }
 
-        // ----------------------------------------------------
-        // CALCULAR AL INICIAR
-        // ----------------------------------------------------
-
         calculateFPS();
-
-        // ----------------------------------------------------
-        // INFORMACIÓN
-        // ----------------------------------------------------
 
         console.log(
             "Juegos:",
@@ -1470,10 +1114,6 @@ document.addEventListener(
         console.log(
             "GPUs:",
             gpus.length
-        );
-
-        console.log(
-            "================================="
         );
     }
 );
