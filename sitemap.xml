@@ -1,248 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/fortnite.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/gta-v.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/minecraft.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/warzone.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/valorant.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/cs2.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/apex-legends.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/rocket-league.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/red-dead-redemption-2.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/forza-horizon-5.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/overwatch-2.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/rainbow-six-siege.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/cyberpunk-2077.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/elden-ring.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/hogwarts-legacy.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/ea-sports-fc-26.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/pubg.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/league-of-legends.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/gta-vi.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/juegos/the-witcher-3.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/privacidad.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/cookies.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
-<url>
-
-<loc>https://diegerig.github.io/FPSCalculator/contacto.html</loc>
-
-<changefreq>monthly</changefreq>
-
-<priority>0.8</priority>
-
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/fortnite.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/gta-v.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/minecraft.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/warzone.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/valorant.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/cs2.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/apex-legends.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/rocket-league.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/red-dead-redemption-2.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/forza-horizon-5.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/overwatch-2.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/rainbow-six-siege.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/cyberpunk-2077.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/elden-ring.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/hogwarts-legacy.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/ea-sports-fc-26.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/pubg.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/league-of-legends.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/gta-vi.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/the-witcher-3.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/privacidad.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/cookies.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://diegerig.github.io/FPSCalculator/contacto.html</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
 
 </urlset>
